@@ -26,3 +26,11 @@ UTILISATEURS :
 - Créer une interface permettant de parcourir les données des associations
 
 kchaumienne@grandlyon.com
+
+nom
+adresse
+horaires
+catégorie
+public
+téléphone
+mail

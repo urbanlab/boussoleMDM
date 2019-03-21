@@ -6,6 +6,10 @@
  * Time: 12:07
  */
 
+if( isset( $_Se ) ) {
+
+}
+
 echo '<!DOCTYPE html><html lang="fr">
     <head>
         <title>Page des associations</title>
