@@ -1,10 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mon association</title>
+    <script>
+        var connexion=false;
+
+        /**
+         * Pour « se connecter », il faut cacher le bloc du formulaire de connexion puis afficher celui de l'interface.
+         */
+        function seConnecter() {
+            document.getElementById('blocConnexionAsso').style.display='none';
+            document.getElementById('blocAsso').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
+    <div id="blocConnexionAsso">
+        <h1>Veuillez vous connecter</h1>
+        <form onsubmit="seConnecter(); return false;">
+            <input type="text" placeholder="pseudo" value="CLAJ Lyon">
+            <input type="password" placeholder="mdp" value="tototititutu">
+            <button>Connexion</button>
+        </form>
+    </div>
+
+    <div id="blocAsso" style="display: none;">
+        <h1>Bienvenue sur votre interface d'administration</h1>
+
+        <h3>Vous pouvez insérer ou modifier ici les informations de votre associaion</h3>
+
+        <form>
+            <label>Nom de l'association :<input type="text" value="CLAJ Lyon"></label>
+            <label>Adresse :<input type="text" value="3 rue de l'Abbé Rozier, 69001 Lyon"></label>
+            <label>Complément d'adresse :<input type="text" value="Entrée Place du Forez"></label>
+            <label>Transports en commun :<textarea>Métro A - Hôtel de Ville
+Métro C - Croix-Paquet</textarea></label>
+            <label>Téléphone :<input type="tel" value="0472078710"></label>
+            <label>E-mail :<input type="email" value="cllaj.lyon@clajlyon.fr"></label>
+            <label>Site internet :<input type="text" value=""></label>
+            <label>Description :<textarea></textarea></label>
+            <label>Catégories :<select multiple>
+                <optgroup label="Précarité">
+                    <option>Accueil de jour</option>
+                    <option>Hébergement d'urgence</option>
+                    <option>Aides alimentaires</option>
+                    <option>Vêtements</option>
+                    <option>Hygiène et soins</option>
+                    <option>Magasin solidaire</option>
+                </optgroup>
+                <optgroup label="Logement">
+                    <option>Recherche de logement</option>
+                    <option>Demande de logement social</option>
+                    <option>Équipement/Travaux</option>
+                    <option>Déménagement</option>
+                    <option>Information sur les droits</option>
+                    <option>Hébergement d'urgence</option>
+                    <option>Recherche d'hébergement</option>
+                </optgroup>
+                <optgroup label="Petite enfance">
+                    <option>Mode de garde</option>
+                    <option>Difficulté parentale</option>
+                    <option>Santé</option>
+                </optgroup>
+                <optgroup label="Alimentaire">
+                    <option>Aide financière</option>
+                    <option>Colis alimentaire</option>
+                    <option>Épicerie alimentaire</option>
+                    <option>Distribution alimentaire</option>
+                </optgroup>
+                <optgroup label="Parentalité">
+                    <option>Soutien à la parentalité</option>
+                    <option>Éducation de prévention (ADSEA)</option>
+                </optgroup>
+                <optgroup label="Senior">
+                    <option>Lutte contre l'isolement</option>
+                    <option>Besoins relatifs au logement</option>
+                    <option>Demande d'aide financière</option>
+                    <option>Loisirs</option>
+                    <option>Aide à domicile</option>
+                </optgroup>
+                <optgroup label="Développement durable">
+                    <option>Économie d'énergie</option>
+                </optgroup>
+                <optgroup label="Accompagnement aux démarches">
+                    <option>Documents administratifs</option>
+                    <option>Rédacion de courrier</option>
+                </optgroup>
+                <optgroup label="Culture">
+                    <option>Activité culturelle</option>
+                    <option>Entraide</option>
+                </optgroup>
+                <optgroup label="Emploi">
+                    <option>Recherche d'emploi</option>
+                    <option>Information sur les droits</option>
+                    <option>Insertion</option>
+                </optgroup>
+                <optgroup label="Santé">
+                    <option>Démarches</option>
+                    <option>Centres médicaux gratuits</option>
+                    <option>Addictions</option>
+                    <option>Enfance</option>
+                </optgroup>
+                <optgroup label="Handicap">
+                    <option>Association de soutien</option>
+                    <option>Travaux adoption</option>
+                </optgroup>
+                <optgroup label="Loisirs">
+                    <option>Vacances</option>
+                    <option>Centre aéré</option>
+                </optgroup>
+            </select></label>
+            <h5>Public accueilli</h5>
+            <label>Enfants :<input type="checkbox"></label>
+            <label>Parent seul :<input type="checkbox"></label>
+            Tranche d'âge : <select><option><</option><option>=</option><option>></option></select><input type="number">ans
+            <label>Sans-papiers ?<input type="checkbox"></label>
+            <h5>Services offerts</h5>
+            <label><input type="checkbox">Machine à laver</label>
+            <label><input type="checkbox">Douches</label>
+            <label><input type="checkbox">Toilettes</label>
+            <label><input type="checkbox">Imprimante</label>
+        </form>
+    </div>
 
 </body>
 </html>
