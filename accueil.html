@@ -40,7 +40,7 @@
                     <input type="text" placeholder="18 quai de Lyon">
                 </label>
                 <div id="genreVisiteur">
-                    <p><span id="genreFeminin">Mme</span> <span id="genreMasculin">Mr</span></p>
+                    <p><span onclick="assombrir(this.id);eclaircir('genreMasculin');" id="genreFeminin" class="boutonGauche">Mme</span> <span onclick="assombrir(this.id);eclaircir('genreFeminin');" id="genreMasculin" class="boutonDroite">Mr</span></p>
                 </div>
                 <div id="ageVisiteur">
                     <label>
@@ -57,20 +57,20 @@
             </div>
             <div class="blocDroite">
                 <div id="emploiVisiteur">
-                    <p><span>Avec</span> <span>Sans</span> <span>Emploi</span></p>
+                    <p><span class="boutonGauche" id="boutonAvecEmploi" onclick="assombrir(this.id);eclaircir('boutonSansEmploi');">Avec</span> <span class="boutonDroite" id="boutonSansEmploi" onclick="assombrir(this.id);eclaircir('boutonAvecEmploi');">Sans</span> <span>Emploi</span></p>
                 </div>
                 <div id="conjointVisiteur">
-                    <p><span>Avec</span> <span>Sans</span> <span>Conjoint</span></p>
+                    <p><span class="boutonGauche" id="boutonAvecConjoint" onclick="assombrir(this.id);eclaircir('boutonSansConjoint');">Avec</span> <span class="boutonDroite" id="boutonSansConjoint" onclick="assombrir(this.id);eclaircir('boutonAvecConjoint');">Sans</span> <span>Conjoint</span></p>
                 </div>
                 <div id="handicapVisiteur">
-                    <p><span>Avec</span> <span>Sans</span> <span>Handicap</span></p>
+                    <p><span class="boutonGauche" id="boutonAvecHandicap" onclick="assombrir(this.id);eclaircir('boutonSansHandicap');">Avec</span> <span class="boutonDroite" id="boutonSansHandicap" onclick="assombrir(this.id);eclaircir('boutonAvecHandicap');">Sans</span> <span>Handicap</span></p>
                 </div>
                 <div id="papiersVisiteur">
-                    <p><span>Avec</span> <span>Sans</span> <span>Papiers en règle</span></p>
+                    <p><span class="boutonGauche" id="boutonAvecPapiers" onclick="assombrir(this.id);eclaircir('boutonSansPapiers');">Avec</span> <span class="boutonDroite" id="boutonSansPapiers" onclick="assombrir(this.id);eclaircir('boutonAvecPapiers');">Sans</span> <span>Papiers en règle</span></p>
                 </div>
             </div>
 
-            <div id="blocBoutonSuivant">
+            <div class="blocBoutonSuivant">
                 <p onclick="masquerBlocs();afficherBloc('blocBesoinVisiteur');">créer un parcours</p>
             </div>
         </div>
@@ -79,33 +79,36 @@
         <div id="blocBesoinVisiteur" class="blocMasquable">
             <h5 id="titreBesoins">Quel est le premier besoin ?</h5>
             <div id="pictosBesoins">
-                <img src="svg/besoins/Group%202.svg" onclick="mettreAJourPrecisionsCriteres();">
-                <img src="svg/besoins/Group%202-1.svg">
-                <img src="svg/besoins/Group%202-2.svg">
-                <img src="svg/besoins/Group%202-3.svg">
-                <img src="svg/besoins/Group%202-4.svg">
-                <img src="svg/besoins/Group%202-5.svg">
-                <img src="svg/besoins/Group%202-6.svg">
-                <img src="svg/besoins/Group%202-7.svg">
-                <img src="svg/besoins/Group%202-8.svg">
-                <img src="svg/besoins/Group%202-9.svg">
-                <img src="svg/besoins/Group%202-10.svg">
-                <img src="svg/besoins/Group%202-11.svg">
-                <img src="svg/besoins/Group%202-12.svg"><!--
-                <img src="svg/besoins/Group%202-13.svg">
-                <img src="svg/besoins/Group%202-14.svg">
-                <img src="svg/besoins/Group%202-15.svg">
-                <img src="svg/besoins/Group%202-16.svg">
-                <img src="svg/besoins/Group%202-17.svg">
-                <img src="svg/besoins/Group%202-18.svg">
-                <img src="svg/besoins/Group%202-19.svg">
-                <img src="svg/besoins/Group%202-20.svg">
-                <img src="svg/besoins/Group%202-21.svg">
-                <img src="svg/besoins/Group%202-22.svg">
-                <img src="svg/besoins/Group%202-23.svg">
-                <img src="svg/besoins/Group%202-24.svg">
-                <img src="svg/besoins/Group%202-25.svg">
-                <img src="svg/besoins/Group%202-26.svg">-->
+                <img src="svg/besoins/senior.svg" onclick="mettreAJourPrecisionsCriteres('senior');">
+                <img src="svg/besoins/petiteEnfance.svg" onclick="mettreAJourPrecisionsCriteres('petiteEnfance');">
+                <img src="svg/besoins/logement.svg" onclick="mettreAJourPrecisionsCriteres('logement');">
+                <img src="svg/besoins/devDurable.svg" onclick="mettreAJourPrecisionsCriteres('devDurable');">
+                <img src="svg/besoins/handicap.svg" onclick="mettreAJourPrecisionsCriteres('handicap');">
+                <img src="svg/besoins/parentalite.svg" onclick="mettreAJourPrecisionsCriteres('parentalite');">
+                <img src="svg/besoins/accesAuxDroits.svg" onclick="mettreAJourPrecisionsCriteres('accesAuxDroits');">
+                <img src="svg/besoins/sante.svg" onclick="mettreAJourPrecisionsCriteres('sante');">
+                <img src="svg/besoins/emploi.svg" onclick="mettreAJourPrecisionsCriteres('emploi');">
+                <img src="svg/besoins/culture.svg" onclick="mettreAJourPrecisionsCriteres('culture');">
+                <img src="svg/besoins/alimentaire.svg" onclick="mettreAJourPrecisionsCriteres('alimentaire');">
+                <img src="svg/besoins/precarite.svg" onclick="mettreAJourPrecisionsCriteres('precarite');">
+                <img src="svg/besoins/loisirs.svg" onclick="mettreAJourPrecisionsCriteres('loisirs');">
+            </div>
+            <div id="precisionBesoin">
+
+            </div>
+            <div class="blocBoutonSuivant">
+                <p onclick="masquerBlocs();afficherBloc('blocResultatsVisiteurs');">créer un parcours</p>
+            </div>
+        </div>
+
+        <div id="blocResultatsVisiteurs">
+            <div id="blocListeResultats">
+
+            </div>
+            <div id="blocDessinResultats">
+                <svg>
+
+                </svg>
             </div>
         </div>
 

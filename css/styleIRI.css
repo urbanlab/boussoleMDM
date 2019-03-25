@@ -41,8 +41,18 @@ header{
 .blocMasquable{
     display: none;
 }
+.boutonGauche{
+    background-color: lightgray;
+    border-radius: 15px 0 0 15px;
+    padding: 5px;
+}
+.boutonDroite{
+    background-color: lightgray;
+    border-radius: 0 15px 15px 0;
+    padding: 5px;
+}
 
-#blocBoutonSuivant{
+.blocBoutonSuivant{
     clear: both;
     float: right;
 }
