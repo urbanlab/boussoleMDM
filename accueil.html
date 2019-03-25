@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Boussole</title>
-</head>
-<body>
-    <svg>
+    <head>
+        <title>IRI</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styleIRI.css">
+        <script src="js/iri.js"></script>
+    </head>
+    <body onload="afficherBloc('blocProfilVisiteur')">
+        <header>
+            <div id="enTeteLogos">
+                <div id="logoProjet">
+                    <img id="logoIRI" alt="Logo IRI" title="Logo IRI" src="img/_logo_iri.png">
+                </div>
+                <div id="logoPorteurs">
+                    <img id="logoMetropole" src="img/Logo_Grand_Lyon.svg" title="Logo Grand Lyon" alt="Logo Grand Lyon">
+                </div>
+            </div>
+            <div id="enTeteNavigation">
+                <p>
+                    <span id="raccourcisNavigation">
+                        <span id="navigationProfil">Profil</span> - <span id="navigattionBesoin">Besoin</span> - <span id="navigationParcours">Parcours</span>
+                    </span>
+                    <span id="raccourcisAction">
+                        <span id="boutonNouveauParcours">Nouveau parcours</span> <span id="boutonImpression">Imprimer</span>
+                    </span>
+                </p>
+            </div>
+        </header>
 
-    </svg>
+        <div id="blocProfilVisiteur" class="blocMasquable">
+            <div class="blocGauche">
+                <h2>Profil</h2>
+                <label>
+                    Adresse
+                    <input type="text" placeholder="18 quai de Lyon">
+                </label>
+                <div id="genreVisiteur">
+                    <p><span id="genreFeminin">Mme</span> <span id="genreMasculin">Mr</span></p>
+                </div>
+                <div id="ageVisiteur">
+                    <label>
+                        Âge
+                        <input type="number" value="30">
+                    </label>
+                </div>
+                <div id="nombreEnfants">
+                    <label>
+                        Nombre d'enfants
+                        <input type="number" value="0">
+                    </label>
+                </div>
+            </div>
+            <div class="blocDroite">
+                <div id="emploiVisiteur">
+                    <p><span>Avec</span> <span>Sans</span> <span>Emploi</span></p>
+                </div>
+                <div id="conjointVisiteur">
+                    <p><span>Avec</span> <span>Sans</span> <span>Conjoint</span></p>
+                </div>
+                <div id="handicapVisiteur">
+                    <p><span>Avec</span> <span>Sans</span> <span>Handicap</span></p>
+                </div>
+                <div id="papiersVisiteur">
+                    <p><span>Avec</span> <span>Sans</span> <span>Papiers en règle</span></p>
+                </div>
+            </div>
+
+            <div id="blocBoutonSuivant">
+                <p onclick="masquerBlocs();afficherBloc('blocBesoinVisiteur');">créer un parcours</p>
+            </div>
+        </div>
+
+
+        <div id="blocBesoinVisiteur" class="blocMasquable">
+            <h5 id="titreBesoins">Quel est le premier besoin ?</h5>
+            <div id="pictosBesoins">
+                <img src="svg/besoins/Group%202.svg" onclick="mettreAJourPrecisionsCriteres();">
+                <img src="svg/besoins/Group%202-1.svg">
+                <img src="svg/besoins/Group%202-2.svg">
+                <img src="svg/besoins/Group%202-3.svg">
+                <img src="svg/besoins/Group%202-4.svg">
+                <img src="svg/besoins/Group%202-5.svg">
+                <img src="svg/besoins/Group%202-6.svg">
+                <img src="svg/besoins/Group%202-7.svg">
+                <img src="svg/besoins/Group%202-8.svg">
+                <img src="svg/besoins/Group%202-9.svg">
+                <img src="svg/besoins/Group%202-10.svg">
+                <img src="svg/besoins/Group%202-11.svg">
+                <img src="svg/besoins/Group%202-12.svg"><!--
+                <img src="svg/besoins/Group%202-13.svg">
+                <img src="svg/besoins/Group%202-14.svg">
+                <img src="svg/besoins/Group%202-15.svg">
+                <img src="svg/besoins/Group%202-16.svg">
+                <img src="svg/besoins/Group%202-17.svg">
+                <img src="svg/besoins/Group%202-18.svg">
+                <img src="svg/besoins/Group%202-19.svg">
+                <img src="svg/besoins/Group%202-20.svg">
+                <img src="svg/besoins/Group%202-21.svg">
+                <img src="svg/besoins/Group%202-22.svg">
+                <img src="svg/besoins/Group%202-23.svg">
+                <img src="svg/besoins/Group%202-24.svg">
+                <img src="svg/besoins/Group%202-25.svg">
+                <img src="svg/besoins/Group%202-26.svg">-->
+            </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

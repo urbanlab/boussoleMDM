@@ -1,0 +1,56 @@
+/**
+    HEADER
+ */
+header{
+}
+
+#logoProjet{
+    float: left;
+}
+#logoIRI{
+    height: 100px;
+}
+
+#logoGrandLyon{
+}
+#logoMetropole{
+    float: right;
+    height: 100px;
+}
+
+#enTeteNavigation{
+    clear: both;
+    border-top: 3px solid #F32020;
+    border-bottom: 2px solid rgba(243,32,32,0.07);
+    background-color: #F3E5E5;
+}
+#raccourcisAction{
+    float:right;
+}
+
+/**
+    CORPS PRINCIPAL
+ */
+.blocGauche{
+    float: left;
+}
+.blocDroite{
+    float: right;
+}
+
+.blocMasquable{
+    display: none;
+}
+
+#blocBoutonSuivant{
+    clear: both;
+    float: right;
+}
+
+#blocBesoinVisiteur{
+    width: 40%;
+    margin: auto;
+}
+/**
+    FOOTER
+ */
