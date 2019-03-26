@@ -245,6 +245,7 @@ function mettreAJourNavigation(idNavigationCourante) {
     document.getElementById('navigationProfil').style.color='black';
     document.getElementById('navigationBesoin').style.color='black';
     document.getElementById('navigationParcours').style.color='black';
+    document.getElementById('navigationRecapitulatif').style.color='black';
     document.getElementById(idNavigationCourante).style.color='red';
 }
 

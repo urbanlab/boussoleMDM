@@ -30,7 +30,8 @@
                     <span id="raccourcisNavigation">
                         <span id="navigationProfil" onclick="masquerBlocs();afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');">Profil</span> -
                         <span id="navigationBesoin" onclick="masquerBlocs();afficherBloc('blocBesoinVisiteur');mettreAJourNavigation('navigationBesoin');">Besoin</span> -
-                        <span id="navigationParcours" onclick="masquerBlocs();afficherBloc('blocResultatsVisiteurs');mettreAJourNavigation('navigationParcours');genererGraphe();">Parcours</span>
+                        <span id="navigationParcours" onclick="masquerBlocs();afficherBloc('blocResultatsVisiteurs');mettreAJourNavigation('navigationParcours');genererGraphe();">Parcours</span> -
+                        <span id="navigationRecapitulatif" onclick="masquerBlocs();afficherBloc('blocRecapitulatif');mettreAJourNavigation('navigationRecapitulatif');">Récapitulatif</span>
                     </span>
                     <span id="raccourcisAction">
                         <span id="boutonNouveauParcours" onclick="masquerBlocs();afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');assos=[];besoinsSelectionnes = [];">Nouveau parcours
@@ -120,6 +121,10 @@
             </div>
             <div id="blocDessinResultats" class="blocDroite">
             </div>
+        </div>
+
+        <div id="blocRecapitulatif" class="blocMasquable">
+            <h3>À imprimer</h3>
         </div>
 
     <!-- Optional JavaScript -->
