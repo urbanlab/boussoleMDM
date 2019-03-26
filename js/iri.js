@@ -197,6 +197,13 @@ function getCategorieDUneSousCategorie(sousCategorie)
     }
 }
 
+function getIdCategorie(labelCategorie, tableauNoeuds) {
+    for (let noeud in tableauNoeuds) {
+        if(tableauNoeuds[noeud].label === labelCategorie) {
+            return tableauNoeuds[noeud].id;
+        }
+    }
+}
 
 function genererGraphe()
 {
@@ -227,9 +234,17 @@ function genererGraphe()
     }
 
     // NŒUDS SECONDAIRES.
-
-
-
+    for (let i = 0; i < besoinsSelectionnes.length; i++) {
+        idCourant = noeuds.length+1;
+        noeuds.push({
+            id:idCourant,
+            label:besoinsSelectionnes[i]
+        });
+        aretes.push({
+            from: idCourant,
+            to:getIdCategorie(getCategorieDUneSousCategorie(besoinsSelectionnes[i]), noeuds)
+        })
+    }
 
     // DESSIN DU GRAPHE
     var nodes = new vis.DataSet(noeuds);
@@ -242,4 +257,32 @@ function genererGraphe()
     };
     var options = {};
     var network = new vis.Network(container, data, options);
+
+    // INTERACTIONS
+    network.on( 'click', function(properties) {
+        var ids = properties.nodes;
+        var clickedNodes = nodes.get(ids);
+        labelCourant = clickedNodes[0]['label'];
+        miseAJourResultats(labelCourant);
+    });
+}
+
+function miseAJourResultats(labelNoeud='')
+{
+    // Si ce label est bien une sous-catégorie, on cherchera sa présence dans les résultats.
+    if(estUneSousCategorie(labelNoeud)) {
+        console.log('affichage des résultats pour ' + labelNoeud)
+    }
+}
+
+function estUneSousCategorie(sousCategorie='')
+{
+    for(let besoin in besoins) {
+        for(let categorie in besoins[besoin]) {
+            if(besoins[besoin][categorie]===sousCategorie) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
