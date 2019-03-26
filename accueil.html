@@ -28,10 +28,18 @@
             <div id="enTeteNavigation">
                 <p>
                     <span id="raccourcisNavigation">
-                        <span id="navigationProfil">Profil</span> - <span id="navigationBesoin">Besoin</span> - <span id="navigationParcours">Parcours</span>
+                        <span id="navigationProfil" onclick="masquerBlocs();afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');">Profil</span> -
+                        <span id="navigationBesoin" onclick="masquerBlocs();afficherBloc('blocBesoinVisiteur');mettreAJourNavigation('navigationBesoin');">Besoin</span> -
+                        <span id="navigationParcours" onclick="masquerBlocs();afficherBloc('blocResultatsVisiteurs');mettreAJourNavigation('navigationParcours');genererGraphe();">Parcours</span>
                     </span>
                     <span id="raccourcisAction">
-                        <span id="boutonNouveauParcours">Nouveau parcours</span><img id="imageNouveauParcours" alt="Nouveau parcours" title="Nouveau parcours" src="svg/nouveauParcours.svg"> <span id="boutonImpression">Imprimer<img src="svg/imprimer.svg" id="imageImpression" title="Imprimer" alt="Imprimer"></span>
+                        <span id="boutonNouveauParcours" onclick="masquerBlocs();afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');assos=[];besoinsSelectionnes = [];">Nouveau parcours
+                            <img id="imageNouveauParcours" alt="Nouveau parcours" title="Nouveau parcours" src="svg/nouveauParcours.svg">
+                        </span>
+
+                        <span id="boutonImpression">Imprimer
+                            <img src="svg/imprimer.svg" id="imageImpression" title="Imprimer" alt="Imprimer">
+                        </span>
                     </span>
                 </p>
             </div>
@@ -107,12 +115,10 @@
         </div>
 
         <div id="blocResultatsVisiteurs" class="blocMasquable">
-            <div id="blocListeResultats">
-                <p>résultats</p>
+            <h3>Résultats</h3>
+            <div id="blocListeResultats" class="blocGauche">
             </div>
-            <div id="blocDessinResultats">
-                <div id="mynetwork"></div>
-
+            <div id="blocDessinResultats" class="blocDroite">
             </div>
         </div>
 

@@ -75,8 +75,8 @@ const besoins = {
 };
 const tableauAssos = [
     ["NOM","","","adresse","adresse secondaire","acc\u00e8s Transports","num\u00e9ro","mail","description","grandes cat\u00e9gories","sous cat\u00e9grories","services","public accueilli","Horaires","","hommes\/femmes\/enfants","ages"],
-    ["ALCOOLIQUES ANONYMES","45.7301763","4.8673558","101 Boulevard des Etats-Unis 69008 Lyon","Maison des associations","","09 69 39 40 20","","organisation de r\u00e9unions r\u00e9serv\u00e9e aux personnes ayant un probl\u00e8me d'alcool","SANTE","addiction","r\u00e9unions","tous","le jeudi de la 3\u00e8me semaine du mois \u00e0 19h30","","",""],
-    ["AMICALE DU NID ","45.7699447","4.7990359","24 avenue Joann\u00e8s Masset 69009 Lyon","Les Passerelles","\u21d2 METRO : ligne D\nStation Gorge de Loup\n \n\u21d2 BUS : lignes 19, 66\nArr\u00eat Piscine de Vaise\n","04 78 27 28 20","","L\u2019Amicale du Nid accueille des femmes, des hommes, des personnes transidentitaires, en danger, ayant connu ou en situation de prostitution. L\u2019Amicale du Nid con\u00e7oit et anime \u00e9galement des formations et conduit des actions de pr\u00e9vention, notamment aupr\u00e8s des jeunes. Elle m\u00e8ne des recherches pour am\u00e9liorer les connaissances du ph\u00e9nom\u00e8ne prostitutionnel","PRECARITE","hebergement d'urgence","Va \u00e0 la rencontre des personnes sur les lieux de prostitution\nPropose des contacts via Internet\nAccueille dans ses \u00e9tablissements, quelle que soit la demande\nAccompagne les personnes, \u00e0 leur rythme et selon leur demande, dans une perspective d\u2019insertion socio-professionnelle\nPropose des h\u00e9bergements d\u2019urgence ou d\u2019insertion, des ateliers d\u2019adaptation \u00e0 la vie active, des logements adapt\u00e9s\n","femmes,  hommes,  personnes transidentitaires, en danger, ayant connu ou en situation de prostitution","\nLundi \u2013 Mardi \u2013 Mercredi \u2013 Vendredi\n9h00 > 12h30 \u2013 13h00 > 17h00\n \nJeudi\n14h00 > 17h00\n","","",""],
+    ["ALCOOLIQUES ANONYMES","45.7301763","4.8673558","101 Boulevard des Etats-Unis 69008 Lyon","Maison des associations","","09 69 39 40 20","","organisation de r\u00e9unions r\u00e9serv\u00e9e aux personnes ayant un probl\u00e8me d'alcool","SANTE","addictions","r\u00e9unions","tous","le jeudi de la 3\u00e8me semaine du mois \u00e0 19h30","","",""],
+    ["AMICALE DU NID ","45.7699447","4.7990359","24 avenue Joann\u00e8s Masset 69009 Lyon","Les Passerelles","\u21d2 METRO : ligne D\nStation Gorge de Loup\n \n\u21d2 BUS : lignes 19, 66\nArr\u00eat Piscine de Vaise\n","04 78 27 28 20","","L\u2019Amicale du Nid accueille des femmes, des hommes, des personnes transidentitaires, en danger, ayant connu ou en situation de prostitution. L\u2019Amicale du Nid con\u00e7oit et anime \u00e9galement des formations et conduit des actions de pr\u00e9vention, notamment aupr\u00e8s des jeunes. Elle m\u00e8ne des recherches pour am\u00e9liorer les connaissances du ph\u00e9nom\u00e8ne prostitutionnel","PRECARITE","hébergement d'urgence","Va \u00e0 la rencontre des personnes sur les lieux de prostitution\nPropose des contacts via Internet\nAccueille dans ses \u00e9tablissements, quelle que soit la demande\nAccompagne les personnes, \u00e0 leur rythme et selon leur demande, dans une perspective d\u2019insertion socio-professionnelle\nPropose des h\u00e9bergements d\u2019urgence ou d\u2019insertion, des ateliers d\u2019adaptation \u00e0 la vie active, des logements adapt\u00e9s\n","femmes,  hommes,  personnes transidentitaires, en danger, ayant connu ou en situation de prostitution","\nLundi \u2013 Mardi \u2013 Mercredi \u2013 Vendredi\n9h00 > 12h30 \u2013 13h00 > 17h00\n \nJeudi\n14h00 > 17h00\n","","",""],
     ["ACCUEIL DE JOUR MAISON DE RODOLPHE (FNDSA)","45.7478090","4.8677063","5 rue Villon 69008 Lyon","","","","","Lieu d\u2019accueil inconditionnel et convivial pour une mise \u00e0 l\u2019abri en journ\u00e9e, proposant des actions d\u2019orientation et\/ou d\u2019accompagnement et des r\u00e9ponses aux besoins fondamentaux.","PRECARITE",""," R\u00e9fectoire\u00a0 \/ accompagnement social \/ r\u00e9f\u00e9rent RSA \/ point sant\u00e9 \/ acc\u00e8s \u00e0 l\u2019hygi\u00e8ne \/ collation \/ repas midi \/ vestiaire \/ buanderie \/ domiciliation postale \/ animations \/ biblioth\u00e8que.","Accueil inconditionnel de toute personne majeure en situation d\u2019exclusion, d\u2019errance, et de grande pr\u00e9carit\u00e9.","\u2022 Horaires : du lundi au vendredi de 7h45 \u00e0 15h.\n\u2022 Horaires hiver (1er novembre au 31 mars) : du lundi au vendredi de 7h \u00e0 17h.\n","","",""],
     ["ACCUEIL SAINT-VINCENT (FNDSA)","45.7593407","4.8258816","10 rue Belli\u00e8vre 69005 Lyon","","","","","Lieu d\u2019accueil inconditionnel et convivial pour une mise \u00e0 l\u2019abri en journ\u00e9e, proposant des actions d\u2019orientation et\/ou d\u2019accompagnement et des r\u00e9ponses aux besoins fondamentaux","PRECARITE","","Acc\u00e8s \u00e0 l\u2019hygi\u00e8ne \/ orientation \/ collation \/ vestiaire \/ buanderie.","Accueil inconditionnel de toute personne majeure en situation d\u2019exclusion, d\u2019errance, et de grande pr\u00e9carit\u00e9.","\u2022 Horaires : du lundi au vendredi de 8h30 \u00e0 11h.\n\u2022 Horaires hiver (1er novembre au 31 mars) : du lundi au vendredi de 8h30 \u00e0 11h, le samedi de 9h \u00e0 11h et le dimanche de 9h \u00e0 11h.\n","","",""],
     ["MEDECINS DU MONDE - CASO","45.7621376","4.8582439","11\/15 boulevard Vivier Merle 69003 Lyon","","","","","Centre d'accueil, de soinbs et d'orientation.","SANTE | PRECARITE","","Information et orientation | Prise en charge m\u00e9dicale | Pr\u00e9vention et \u00e9ducation \u00e0 la sant\u00e9 | Contraception et suivi de grossesse | D\u00e9pistage et vaccination | Entretiens psychologiques | Prise en charge sociale, juridique et aide dans les d\u00e9marches administratives | Distribution de mat\u00e9riel, de kits d'hygi\u00e8ne, de sacs de couchage, etc. | Recueil et analyse de donn\u00e9es pour soutenir notre plaidoyer | Pr\u00e9vention du cancer du col de l'ut\u00e9rus","","Lundi et vendredi | 9h00 - 11h00\n Mardi et mercredi | 13h30-16h30","","",""],
@@ -126,6 +126,73 @@ const tableauAssos = [
     ["ARALIS - R\u00e9sidence","45.7584496","4.8509033","230 rue Andr\u00e9 Philip ,69003 Lyon","","Metro B arr\u00eat Guichard.","","accueil@aralis.org","La Fondation ARALIS propose des logements temporaires, destin\u00e9s en priorit\u00e9 aux personnes en difficult\u00e9 d\u2019acc\u00e8s \u00e0 un logement, aux personnes isol\u00e9es et \u00e0 toute personne en mobilit\u00e9 dans la r\u00e9gion : \u00e9tudiants, salari\u00e9s, stagiaires de la formation professionnelle ayant besoin d\u2019un logement.","LOGEMENT","","","ARALIS s\u2019adresse aux personnes (hommes, femmes, couples ou petites compositions familiales) ayant des difficult\u00e9s d\u2019acc\u00e8s \u00e0 un logement ordinaire pour des raisons sociales et \u00e9conomiques en mobilit\u00e9 professionnelle ayant un besoin de lien social . ","permanence Mercredi de 14h00 \u00e0 16h30","","",""]];
 var assos = [];
 var besoinsSelectionnes = [];
+const icones = {
+    accesAuxDroits:'',
+    alimentaire:'',
+    culture:[
+        'Activité culturelle',
+        'Entraide',
+        'Animation sociale',
+    ],
+    devDurable:[
+        'Économie d\'énergie',
+    ],
+    emploi:[
+        'Recherche d\'emploi',
+        'Information sur les droits',
+        'Insertion',
+    ],
+    handicap:[
+        'Association de soutien',
+        'Drapeaux adoption',
+    ],
+    logement:[
+        'Recherche de logement',
+        'Demande de logement social',
+        'Equipement / Travaux',
+        'Déménagement',
+        'Information sur les droits',
+        'Hébergement d\'urgence',
+        'Recherche d\'hébergement',
+    ],
+    loisirs:[
+        'Vacances',
+        'Centre aéré',
+        'Activités sportive ou culturelle',
+    ],
+    parentalite:[
+        'Soutien à la parentalité',
+        'Education de prévention',
+    ],
+    petiteEnfance: [
+        'Mode de garde',
+        'Difficulté parentale',
+        'Santé',
+        'Scolarité',
+    ],
+    precarite:[
+        'Accueil de jour',
+        'Hébergement d\'urgence',
+        'Aides alimentaires',
+        'Vêtements',
+        'Hygiène et soins',
+        'Magasin solidaire',
+    ],
+    sante:[
+        'Démarches',
+        'Centres médicaux gratuits',
+        'Addictions',
+        'Enfance',
+    ],
+    senior: [
+        'Lutte contre l\'isolement',
+        'Besoins relatif au logement',
+        'Demande d\'aire financière',
+        'Loisirs',
+        'Aide à domicile',
+    ],
+};
+
 function chargerDonnees()
 {
     for (i = 1; i< tableauAssos.length; i++) {
@@ -208,7 +275,12 @@ function getIdCategorie(labelCategorie, tableauNoeuds) {
 function genererGraphe()
 {
     let noeuds = [
-        {id: 1, label: 'Visiteur'},
+        {
+            id: 1,
+            label: 'Visiteur',
+            image: 'svg/personneRouge.svg',
+            shape: 'image'
+        },
     ];
     let aretes = [];
     let categoriesChoisies = [];
@@ -219,7 +291,9 @@ function genererGraphe()
             categoriesChoisies.push(nouvelleCategorie);
             noeuds.push({
                 id:noeuds.length+1,
-                label:nouvelleCategorie
+                label:nouvelleCategorie,
+                image: 'svg/besoins/' + nouvelleCategorie + 'Rouge.svg',
+                shape: 'image'
             })
         }
     }
@@ -228,7 +302,10 @@ function genererGraphe()
         if(i!==0) {
             aretes.push({
                 from:1,
-                to:noeuds[i].id
+                to:noeuds[i].id,
+                color:{
+                    color:'red'
+                }
             })
         }
     }
@@ -242,7 +319,10 @@ function genererGraphe()
         });
         aretes.push({
             from: idCourant,
-            to:getIdCategorie(getCategorieDUneSousCategorie(besoinsSelectionnes[i]), noeuds)
+            to:getIdCategorie(getCategorieDUneSousCategorie(besoinsSelectionnes[i]), noeuds),
+            color:{
+                color:'red'
+            },
         })
     }
 
@@ -250,7 +330,7 @@ function genererGraphe()
     var nodes = new vis.DataSet(noeuds);
     var edges = new vis.DataSet(aretes);
 
-    var container = document.getElementById('mynetwork');
+    var container = document.getElementById('blocDessinResultats');
     var data = {
         nodes: nodes,
         edges: edges
@@ -262,17 +342,52 @@ function genererGraphe()
     network.on( 'click', function(properties) {
         var ids = properties.nodes;
         var clickedNodes = nodes.get(ids);
-        labelCourant = clickedNodes[0]['label'];
-        miseAJourResultats(labelCourant);
+        if (clickedNodes[0]) {
+            labelCourant = clickedNodes[0]['label'];
+            miseAJourResultats(labelCourant);
+        }
     });
 }
 
 function miseAJourResultats(labelNoeud='')
 {
+    let resultatsCorrespondants = [];
     // Si ce label est bien une sous-catégorie, on cherchera sa présence dans les résultats.
     if(estUneSousCategorie(labelNoeud)) {
-        console.log('affichage des résultats pour ' + labelNoeud)
+        for (let asso in assos) {
+            if(assos[asso]['sousCategories'].toLowerCase().includes(labelNoeud.toLowerCase())) {
+                resultatsCorrespondants.push(assos[asso]);
+            }
+        }
     }
+    afficherResultats(resultatsCorrespondants);
+}
+
+
+function afficherResultats(tableauResultats)
+{
+    //console.log(tableauResultats);
+    let contenuResultats = '<div id="listeResultats">';
+    let classe = 'gris';
+    for( let resultat in tableauResultats) {
+        let idAssoCourante = 'resultatAsso' + tableauResultats[resultat]['id'];
+        let texteSupplementaire = '<h6>Horaires :</h6>';
+        texteSupplementaire += '<p>' + tableauResultats[resultat]['horaires'] + '</p>';
+        let codeAsso = '<div class="blocResultat ' + classe + '" id="' + idAssoCourante + '">';
+        codeAsso += '<h6 class="titreAsso">' + tableauResultats[resultat]['nom'] + '</h6>';
+        codeAsso += '<p class="adresseAsso"><img class="baliseResultat" src="svg/baliseRouge.svg">' + tableauResultats[resultat]['adresse'] + '</p>';
+        codeAsso += '<p><img src="svg/telephoneNoir.svg" class="imageTelephone">' + tableauResultats[resultat]['telephone'] + '</p>';
+        codeAsso += '<p class="souligne">...</p>';
+        codeAsso += '</div>';
+        contenuResultats += codeAsso;
+        (classe==='gris') ? classe='blanc' : classe='gris';
+    }
+    contenuResultats += '</div>';
+    document.getElementById('blocListeResultats').innerHTML = contenuResultats;
+}
+
+function agrandirResultatCourant(idBlocResultat, donneesResultat) {
+    document.getElementById(idBlocResultat).innerHTML = donneesResultat;
 }
 
 function estUneSousCategorie(sousCategorie='')

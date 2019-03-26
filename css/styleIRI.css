@@ -79,6 +79,51 @@ header{
     width: 40%;
     margin: auto;
 }
+
+#blocResultatsVisiteurs{
+    width: 75%;
+    margin: auto;
+}
+#blocListeResultats{
+    width: 40%;
+    border-top:3px solid #F32020;
+    height: 600px;
+    overflow: scroll;
+}
+.blocResultat{
+    padding-left: 20px;
+}
+.baliseResultat {
+    width: 20px;
+}
+.titreAsso{
+    font-weight: bold;
+    padding-top: 10px;
+}
+.adresseAsso{
+}
+.imageTelephone{
+    width: 20px;
+}
+#blocDessinResultats{
+    width: 500px;
+    height: 500px;
+}
 /**
     FOOTER
  */
+
+
+
+/**
+    GÉNÉRAL
+ */
+.gris{
+    background-color: lightgray;
+}
+.blanc{
+    background-color: floralwhite;
+}
+.souligne{
+    text-decoration: underline;
+}
