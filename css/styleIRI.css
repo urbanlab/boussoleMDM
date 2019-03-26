@@ -19,10 +19,24 @@ header{
 }
 
 #enTeteNavigation{
+    padding-top: 10px;
     clear: both;
     border-top: 3px solid #F32020;
     border-bottom: 2px solid rgba(243,32,32,0.07);
     background-color: #F3E5E5;
+}
+#raccourcisNavigation{
+    padding-left: 25px;
+}
+#imageNouveauParcours{
+    height: 25px;
+    padding-right: 25px;
+    padding-left: 15px;
+}
+#imageImpression{
+    height: 25px;
+    padding-right: 25px;
+    padding-left: 15px;
 }
 #raccourcisAction{
     float:right;
@@ -37,7 +51,11 @@ header{
 .blocDroite{
     float: right;
 }
-
+#blocProfilVisiteur{
+    width: 60%;
+    margin: auto;
+    margin-top: 7%;
+}
 .blocMasquable{
     display: none;
 }

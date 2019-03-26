@@ -7,10 +7,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- vis.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" crossorigin="anonymous"></script>
+        <!-- IRI -->
         <link rel="stylesheet" href="css/styleIRI.css">
+
         <script src="js/iri.js"></script>
     </head>
-    <body onload="afficherBloc('blocProfilVisiteur')">
+    <body onload="afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');chargerDonnees()">
         <header>
             <div id="enTeteLogos">
                 <div id="logoProjet">
@@ -23,20 +28,20 @@
             <div id="enTeteNavigation">
                 <p>
                     <span id="raccourcisNavigation">
-                        <span id="navigationProfil">Profil</span> - <span id="navigattionBesoin">Besoin</span> - <span id="navigationParcours">Parcours</span>
+                        <span id="navigationProfil">Profil</span> - <span id="navigationBesoin">Besoin</span> - <span id="navigationParcours">Parcours</span>
                     </span>
                     <span id="raccourcisAction">
-                        <span id="boutonNouveauParcours">Nouveau parcours</span> <span id="boutonImpression">Imprimer</span>
+                        <span id="boutonNouveauParcours">Nouveau parcours</span><img id="imageNouveauParcours" alt="Nouveau parcours" title="Nouveau parcours" src="svg/nouveauParcours.svg"> <span id="boutonImpression">Imprimer<img src="svg/imprimer.svg" id="imageImpression" title="Imprimer" alt="Imprimer"></span>
                     </span>
                 </p>
             </div>
         </header>
 
         <div id="blocProfilVisiteur" class="blocMasquable">
+            <h2>Profil</h2>
             <div class="blocGauche">
-                <h2>Profil</h2>
                 <label>
-                    Adresse
+                    Adresse :<br>
                     <input type="text" placeholder="18 quai de Lyon">
                 </label>
                 <div id="genreVisiteur">
@@ -71,7 +76,7 @@
             </div>
 
             <div class="blocBoutonSuivant">
-                <p onclick="masquerBlocs();afficherBloc('blocBesoinVisiteur');">créer un parcours</p>
+                <p onclick="masquerBlocs();afficherBloc('blocBesoinVisiteur');mettreAJourNavigation('navigationBesoin');">créer un parcours</p>
             </div>
         </div>
 
@@ -97,18 +102,16 @@
 
             </div>
             <div class="blocBoutonSuivant">
-                <p onclick="masquerBlocs();afficherBloc('blocResultatsVisiteurs');">créer un parcours</p>
+                <p onclick="masquerBlocs();afficherBloc('blocResultatsVisiteurs');mettreAJourNavigation('navigationParcours');genererGraphe();">créer un parcours</p>
             </div>
         </div>
 
-        <div id="blocResultatsVisiteurs">
+        <div id="blocResultatsVisiteurs" class="blocMasquable">
             <div id="blocListeResultats">
-
             </div>
             <div id="blocDessinResultats">
-                <svg>
+                <div id="mynetwork"></div>
 
-                </svg>
             </div>
         </div>
 
