@@ -125,7 +125,7 @@ const tableauAssos = [
     ["ARALIS - R\u00e9sidence","45.7305745","4.8775947"," 102, avenue G\u00e9n\u00e9ral Fr\u00e8re 69008 Lyon","","Bus C22 ou C25 arr\u00eat Grange Rouge","","accueil@aralis.org","La Fondation ARALIS propose des logements temporaires, destin\u00e9s en priorit\u00e9 aux personnes en difficult\u00e9 d\u2019acc\u00e8s \u00e0 un logement, aux personnes isol\u00e9es et \u00e0 toute personne en mobilit\u00e9 dans la r\u00e9gion : \u00e9tudiants, salari\u00e9s, stagiaires de la formation professionnelle ayant besoin d\u2019un logement.","LOGEMENT","","","ARALIS s\u2019adresse aux personnes (hommes, femmes, couples ou petites compositions familiales) ayant des difficult\u00e9s d\u2019acc\u00e8s \u00e0 un logement ordinaire pour des raisons sociales et \u00e9conomiques en mobilit\u00e9 professionnelle ayant un besoin de lien social . ","Permanence Lundi de 14h00 \u00e0 17h00 :","","",""],
     ["ARALIS - R\u00e9sidence","45.7584496","4.8509033","230 rue Andr\u00e9 Philip ,69003 Lyon","","Metro B arr\u00eat Guichard.","","accueil@aralis.org","La Fondation ARALIS propose des logements temporaires, destin\u00e9s en priorit\u00e9 aux personnes en difficult\u00e9 d\u2019acc\u00e8s \u00e0 un logement, aux personnes isol\u00e9es et \u00e0 toute personne en mobilit\u00e9 dans la r\u00e9gion : \u00e9tudiants, salari\u00e9s, stagiaires de la formation professionnelle ayant besoin d\u2019un logement.","LOGEMENT","","","ARALIS s\u2019adresse aux personnes (hommes, femmes, couples ou petites compositions familiales) ayant des difficult\u00e9s d\u2019acc\u00e8s \u00e0 un logement ordinaire pour des raisons sociales et \u00e9conomiques en mobilit\u00e9 professionnelle ayant un besoin de lien social . ","permanence Mercredi de 14h00 \u00e0 16h30","","",""]];
 var assos = [];
-
+var besoinsSelectionnes = [];
 function chargerDonnees()
 {
     for (i = 1; i< tableauAssos.length; i++) {
@@ -150,7 +150,6 @@ function chargerDonnees()
         };
         assos.push(nouvelleAsso);
     }
-    console.log(assos);
 }
 
 function masquerBlocs()
@@ -170,8 +169,7 @@ function mettreAJourPrecisionsCriteres(idBesoin) {
     const blocPrecision = document.getElementById('precisionBesoin');
     let textePrecisionBesoin ='<h5 id="titrePrecisionsBesoins">Quel est le besoin plus précisément ?</h5>';
     for (let besoin in besoins[idBesoin]) {
-        console.log(besoins[idBesoin][besoin]);
-        textePrecisionBesoin += '<p><label><input type="checkbox">' + besoins[idBesoin][besoin] + '</label></p>';
+        textePrecisionBesoin += '<p><label><input onclick="besoinsSelectionnes.push(this.value);" type="checkbox" class="precisionBesoin" value="' + besoins[idBesoin][besoin] + '">' + besoins[idBesoin][besoin] + '</label></p>';
     }
     blocPrecision.innerHTML=textePrecisionBesoin;
 }
@@ -190,29 +188,53 @@ function eclaircir(idAEclaircir) {
     document.getElementById(idAEclaircir).style.backgroundColor = 'lightgray';
 }
 
-
+function getCategorieDUneSousCategorie(sousCategorie)
+{
+    for (let besoin in besoins) {
+        if( besoins[besoin].includes(sousCategorie)) {
+            return besoin;
+        }
+    }
+}
 
 
 function genererGraphe()
 {
-    var nodes = new vis.DataSet([
-        {id: 1, label: 'Node 1'},
-        {id: 2, label: 'Node 2'},
-        {id: 3, label: 'Node 3'},
-        {id: 4, label: 'Node 4'},
-        {id: 5, label: 'Node 5'}
-    ]);
+    let noeuds = [
+        {id: 1, label: 'Visiteur'},
+    ];
+    let aretes = [];
+    let categoriesChoisies = [];
+    // On commence par voir quels sont les sous-catégories qui ont été cochées.
+    for (let i = 0; i < besoinsSelectionnes.length; i++) {
+        const nouvelleCategorie = getCategorieDUneSousCategorie(besoinsSelectionnes[i]);
+        if(! categoriesChoisies.includes(nouvelleCategorie)) {
+            categoriesChoisies.push(nouvelleCategorie);
+            noeuds.push({
+                id:noeuds.length+1,
+                label:nouvelleCategorie
+            })
+        }
+    }
+    // On a tous nos nœuds primaires. Créons les arêtes qui les relieront au nœud de base.
+    for (let i = 0; i < noeuds.length; i++) {
+        if(i!==0) {
+            aretes.push({
+                from:1,
+                to:noeuds[i].id
+            })
+        }
+    }
 
-    // create an array with edges
-    var edges = new vis.DataSet([
-        {from: 1, to: 3},
-        {from: 1, to: 2},
-        {from: 2, to: 4},
-        {from: 2, to: 5},
-        {from: 3, to: 3}
-    ]);
+    // NŒUDS SECONDAIRES.
 
-    // create a network
+
+
+
+    // DESSIN DU GRAPHE
+    var nodes = new vis.DataSet(noeuds);
+    var edges = new vis.DataSet(aretes);
+
     var container = document.getElementById('mynetwork');
     var data = {
         nodes: nodes,
