@@ -100,6 +100,10 @@ header{
     font-weight: bold;
     padding-top: 10px;
 }
+.boutonPlus{
+    width: 15px;
+    margin-right: 10px;
+}
 .adresseAsso{
 }
 .imageTelephone{
@@ -107,7 +111,7 @@ header{
 }
 #blocDessinResultats{
     width: 500px;
-    height: 500px;
+    height: 400px;
 }
 /**
     FOOTER

@@ -119,12 +119,14 @@
             <h3>Résultats</h3>
             <div id="blocListeResultats" class="blocGauche">
             </div>
-            <div id="blocDessinResultats" class="blocDroite">
+            <div class="blocDroite">
+                <div id="blocDessinResultats">
+                </div>
+                <p class="blocDroite" onclick="masquerBlocs();afficherBloc('blocRecapitulatif');mettreAJourNavigation('navigationRecapitulatif');genererRecapitulatif()">Voir récapitulatif</p>
             </div>
         </div>
 
         <div id="blocRecapitulatif" class="blocMasquable">
-            <h3>À imprimer</h3>
         </div>
 
     <!-- Optional JavaScript -->

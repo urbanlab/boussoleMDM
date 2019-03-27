@@ -126,6 +126,7 @@ const tableauAssos = [
     ["ARALIS - R\u00e9sidence","45.7584496","4.8509033","230 rue Andr\u00e9 Philip ,69003 Lyon","","Metro B arr\u00eat Guichard.","","accueil@aralis.org","La Fondation ARALIS propose des logements temporaires, destin\u00e9s en priorit\u00e9 aux personnes en difficult\u00e9 d\u2019acc\u00e8s \u00e0 un logement, aux personnes isol\u00e9es et \u00e0 toute personne en mobilit\u00e9 dans la r\u00e9gion : \u00e9tudiants, salari\u00e9s, stagiaires de la formation professionnelle ayant besoin d\u2019un logement.","LOGEMENT","","","ARALIS s\u2019adresse aux personnes (hommes, femmes, couples ou petites compositions familiales) ayant des difficult\u00e9s d\u2019acc\u00e8s \u00e0 un logement ordinaire pour des raisons sociales et \u00e9conomiques en mobilit\u00e9 professionnelle ayant un besoin de lien social . ","permanence Mercredi de 14h00 \u00e0 16h30","","",""]];
 var assos = [];
 var besoinsSelectionnes = [];
+var associationsChoisies = [];
 const icones = {
     accesAuxDroits:'',
     alimentaire:'',
@@ -375,7 +376,7 @@ function afficherResultats(tableauResultats)
         let texteSupplementaire = '<h6>Horaires :</h6>';
         texteSupplementaire += '<p>' + tableauResultats[resultat]['horaires'] + '</p>';
         let codeAsso = '<div class="blocResultat ' + classe + '" id="' + idAssoCourante + '">';
-        codeAsso += '<h6 class="titreAsso">' + tableauResultats[resultat]['nom'] + '</h6>';
+        codeAsso += '<h6 class="titreAsso">' + tableauResultats[resultat]['nom'] + '<img onclick="selectionnerAssociation(' + tableauResultats[resultat]['id'] + ');" alt="Ajouter association" title="Ajouter association" src="svg/plus.svg" class="blocDroite boutonPlus" /></h6>';
         codeAsso += '<p class="adresseAsso"><img class="baliseResultat" src="svg/baliseRouge.svg">' + tableauResultats[resultat]['adresse'] + '</p>';
         codeAsso += '<p><img src="svg/telephoneNoir.svg" class="imageTelephone">' + tableauResultats[resultat]['telephone'] + '</p>';
         codeAsso += '<p class="souligne">...</p>';
@@ -385,6 +386,17 @@ function afficherResultats(tableauResultats)
     }
     contenuResultats += '</div>';
     document.getElementById('blocListeResultats').innerHTML = contenuResultats;
+}
+
+/**
+ * La fonction ajoute simplement l'id de l'association à notre liste d'associations choisies.
+ * On changera également l'arrière-plan pour que ce soit visuel.
+ * @param idAssociation
+ */
+function selectionnerAssociation(idAssociation)
+{
+    associationsChoisies.push(idAssociation); // ajout à la liste des assos choisies
+    document.getElementById('resultatAsso' + idAssociation).style.backgroundColor = '#ffcad2'; // Chgt de couleur.
 }
 
 function agrandirResultatCourant(idBlocResultat, donneesResultat) {
@@ -401,4 +413,14 @@ function estUneSousCategorie(sousCategorie='')
         }
     }
     return false;
+}
+
+
+/**
+ *      RÉCAPITULATIF
+ **/
+
+function genererRecapitulatif()
+{
+    
 }
