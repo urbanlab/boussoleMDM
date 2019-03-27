@@ -395,7 +395,9 @@ function afficherResultats(tableauResultats)
  */
 function selectionnerAssociation(idAssociation)
 {
-    associationsChoisies.push(idAssociation); // ajout à la liste des assos choisies
+    if(!associationsChoisies.includes(idAssociation)) {
+        associationsChoisies.push(idAssociation); // ajout à la liste des assos choisies
+    }
     document.getElementById('resultatAsso' + idAssociation).style.backgroundColor = '#ffcad2'; // Chgt de couleur.
 }
 
@@ -420,7 +422,44 @@ function estUneSousCategorie(sousCategorie='')
  *      RÉCAPITULATIF
  **/
 
+/**
+ * La fonction sert à générer le bloc récapitulatif.
+ */
 function genererRecapitulatif()
 {
-    
+    const blocRecap = document.getElementById('blocRecapitulatif');
+    blocRecap.innerHTML = '';
+    for( let association in associationsChoisies) {
+        // On créé les données pour chaque association qui a été sélectionnée.
+        const assoCourante = getInformationsAssociation(associationsChoisies[association]);
+        let codeAssoCourante = '';
+        codeAssoCourante += '<div class="blocRecapResultat">';
+        codeAssoCourante += '<div class="blocInfoRecap blocGauche">toto';
+        codeAssoCourante +='</div>';
+        codeAssoCourante += '<div class="blocInfoRecap blocDroite">titi';
+        codeAssoCourante +='</div>';
+        codeAssoCourante +='</div>';
+        blocRecap.innerHTML+=codeAssoCourante;
+    }
+}
+
+
+
+
+/**
+ *      MÉTHODES GÉNÉRALES
+ **/
+
+/**
+ * Récupère les informations d'une association si on a son id.
+ * @param idAsso L'id de l'association voulue.
+ * @returns {*} Les informations de l'association (un objet js)
+ */
+function getInformationsAssociation(idAsso)
+{
+    for(let asso in assos) {
+        if(assos[asso]['id'] === idAsso) {
+            return assos[asso];
+        }
+    }
 }
