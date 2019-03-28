@@ -70,9 +70,15 @@ header{
     padding: 5px;
 }
 
-.blocBoutonSuivant{
+.blocBoutons{
+    padding-top: 50px;
     clear: both;
+}
+.blocBoutonSuivant{
     float: right;
+}
+.blocBoutonPrecedent{
+    float: left;
 }
 
 #blocBesoinVisiteur{

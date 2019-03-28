@@ -88,9 +88,12 @@
         <p><b>Fiche de liaison :</b></p>
         <p><span class="boutonGauche" id="boutonAvecFiche" onclick="assombrir(this.id);eclaircir('boutonSansFiche');">Oui</span> <span class="boutonDroite" id="boutonSansFiche" onclick="assombrir(this.id);eclaircir('boutonAvecFiche');">Non</span></p>
     </div>
-    <div class="blocBoutonSuivant">
-        <span onclick="masquerBlocs();afficherBloc('blocPublicPartenaire');" class="boutonSuivant">Suivant &#62;</span>
+    <div class="blocBoutons">
+        <div class="blocBoutonSuivant">
+            <span onclick="masquerBlocs();afficherBloc('blocPublicPartenaire');" class="boutonSuivant">Suivant &#62;</span>
+        </div>
     </div>
+
 </div>
 
 
@@ -116,9 +119,15 @@
         <p><b>Papiers administratifs :</b></p>
         <p><span class="boutonGauche" id="boutonAvecPapiersAdmin" onclick="assombrir(this.id);eclaircir('boutonSansPapiersAdmin');">Avec</span> <span class="boutonDroite" id="boutonSansPapiersAdmin" onclick="assombrir(this.id);eclaircir('boutonAvecPapiersAdmin');">Sans</span></p>
     </div>
-    <div class="blocBoutonSuivant">
-        <span onclick="masquerBlocs();afficherBloc('blocBesoinVisiteurs');" class="boutonSuivant">Suivant &#62;</span>
+    <div class="blocBoutons">
+        <div class="blocBoutonPrecedent">
+            <span onclick="masquerBlocs();afficherBloc('blocInformation');" class="boutonSuivant">&#60; Précédent</span>
+        </div>
+        <div class="blocBoutonSuivant">
+            <span onclick="masquerBlocs();afficherBloc('blocBesoinVisiteurs');" class="boutonSuivant">Suivant &#62;</span>
+        </div>
     </div>
+
 </div>
 
 <div id="blocBesoinVisiteurs" class="blocMasquable">
@@ -141,9 +150,34 @@
     <div id="precisionBesoin">
 
     </div>
+    <div class="blocBoutons">
+        <div class="blocBoutonPrecedent">
+            <span onclick="masquerBlocs();afficherBloc('blocPublicPartenaire');" class="boutonSuivant">&#60; Précédent</span>
+        </div>
+        <div class="blocBoutonSuivant">
+            <span onclick="masquerBlocs();afficherBloc('blocRecapitulatif');" class="boutonSuivant">Suivant &#62;</span>
+        </div>
+    </div>
+</div>
 </div>
 
 <div id="blocRecapitulatif" class="blocMasquable">
+    <h3>Récapitulatif</h3>
+    <p id="recapNomAsso"></p>
+    <p id="recapAdresseAsso"></p>
+    <p id="recapTelephoneAsso"></p>
+    <p><b>Horaires :</b></p>
+    <p id="recapHorairesVisiteurs"></p>
+    <p><b>Services :</b></p>
+
+    <p>Notes :</p>
+    <textarea></textarea>
+
+    <div class="blocBoutons">
+        <div class="blocBoutonPrecedent">
+            <span onclick="masquerBlocs();afficherBloc('blocBesoinVisiteurs');" class="boutonSuivant">&#60; Précédent</span>
+        </div>
+    </div>
 </div>
 
 <!-- Optional JavaScript -->
