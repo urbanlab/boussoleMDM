@@ -164,3 +164,74 @@ header{
 .selection{
     background-color: #ffcad2;
 }
+
+
+/**
+    VUE PARTENAIRE
+ */
+#blocInformation{
+    width: 50%;
+    margin: auto;
+    padding-top: 50px;
+}
+#titreInfoPartenaire{
+    margin-left: 35px;
+}
+#nomPartenaire{
+    margin-left: 75px;
+}
+#baliseAdressePartenaire{
+    margin-left: 35px;
+}
+#adressePartenaire{
+    margin-left: 5px;
+}
+#imageTelephonePartenaire{
+    margin-left: 35px;
+}
+#telephonePartenaire{
+    margin-left: 5px;
+}
+#imageHorairePartenaire{
+    margin-left: 35px;
+}
+#horairesPartenaire{
+    margin-left: 25px;
+}
+.horaireQuotidien{
+    float: left;
+    width: 75px;
+}
+.boutonSuivant{
+    color: red;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#blocPublicPartenaire{
+    width: 40%;
+    margin: auto;
+    padding-top: 50px;
+}
+#textPartenaireAgeMin{
+    float: left;
+    width: 75px;
+}
+#textPartenaireAgeMax{
+    float: left;
+    width: 75px;
+}
+#boutonAgeMinimum{
+    float: left;
+    width: 75px;
+}
+#boutonAgeMaximum{
+    float: left;
+    width: 75px;
+}
+#blocBesoinVisiteurs{
+    width: 40%;
+    margin: auto;
+    padding-top: 50px;
+}

@@ -1,128 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mon association</title>
-    <script>
-        var connexion=false;
+    <title>Partenaires Boussole</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- vis.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" crossorigin="anonymous"></script>
+    <!-- LeaftLet -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+            integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+            crossorigin=""/>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"/>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"/>
+    <!-- Make sure you put this AFTER Leaflet\'s CSS-->
+    <script
+            src = "https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity = "sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin = "" ></script >
+    <script src = "https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" ></script >
 
-        /**
-         * Pour « se connecter », il faut cacher le bloc du formulaire de connexion puis afficher celui de l'interface.
-         */
-        function seConnecter() {
-            document.getElementById('blocConnexionAsso').style.display='none';
-            document.getElementById('blocAsso').style.display = 'block';
-        }
-    </script>
+    <!-- IRI -->
+    <link rel="stylesheet" href="css/styleIRI.css">
+
+    <script src="js/iri.js"></script>
 </head>
-<body>
-    <div id="blocConnexionAsso">
-        <h1>Veuillez vous connecter</h1>
-        <form onsubmit="seConnecter(); return false;">
-            <input type="text" placeholder="pseudo" value="CLAJ Lyon">
-            <input type="password" placeholder="mdp" value="tototititutu">
-            <button>Connexion</button>
-        </form>
+<body onload="afficherBloc('blocInformation');mettreAJourNavigation('navigationInformation');">
+<header>
+    <div id="enTeteLogos">
+        <div id="logoProjet">
+            <img id="logoBoussole" alt="Logo Boussole" title="Logo Boussole" src="img/logoBoussole.svg">
+        </div>
+        <div id="logoPorteurs">
+            <img id="logoMetropole" src="img/Logo_Grand_Lyon.svg" title="Logo Grand Lyon" alt="Logo Grand Lyon">
+        </div>
     </div>
-
-    <div id="blocAsso" style="display: none;">
-        <h1>Bienvenue sur votre interface d'administration</h1>
-
-        <h3>Vous pouvez insérer ou modifier ici les informations de votre associaion</h3>
-
-        <form>
-            <label>Nom de l'association :<input type="text" value="CLAJ Lyon"></label>
-            <label>Adresse :<input type="text" value="3 rue de l'Abbé Rozier, 69001 Lyon"></label>
-            <label>Complément d'adresse :<input type="text" value="Entrée Place du Forez"></label>
-            <label>Transports en commun :<textarea>Métro A - Hôtel de Ville
-Métro C - Croix-Paquet</textarea></label>
-            <label>Téléphone :<input type="tel" value="0472078710"></label>
-            <label>E-mail :<input type="email" value="cllaj.lyon@clajlyon.fr"></label>
-            <label>Site internet :<input type="text" value=""></label>
-            <label>Description :<textarea></textarea></label>
-            <label>Catégories :<select multiple>
-                <optgroup label="Précarité">
-                    <option>Accueil de jour</option>
-                    <option>Hébergement d'urgence</option>
-                    <option>Aides alimentaires</option>
-                    <option>Vêtements</option>
-                    <option>Hygiène et soins</option>
-                    <option>Magasin solidaire</option>
-                </optgroup>
-                <optgroup label="Logement">
-                    <option>Recherche de logement</option>
-                    <option>Demande de logement social</option>
-                    <option>Équipement/Travaux</option>
-                    <option>Déménagement</option>
-                    <option>Information sur les droits</option>
-                    <option>Hébergement d'urgence</option>
-                    <option>Recherche d'hébergement</option>
-                </optgroup>
-                <optgroup label="Petite enfance">
-                    <option>Mode de garde</option>
-                    <option>Difficulté parentale</option>
-                    <option>Santé</option>
-                </optgroup>
-                <optgroup label="Alimentaire">
-                    <option>Aide financière</option>
-                    <option>Colis alimentaire</option>
-                    <option>Épicerie alimentaire</option>
-                    <option>Distribution alimentaire</option>
-                </optgroup>
-                <optgroup label="Parentalité">
-                    <option>Soutien à la parentalité</option>
-                    <option>Éducation de prévention (ADSEA)</option>
-                </optgroup>
-                <optgroup label="Senior">
-                    <option>Lutte contre l'isolement</option>
-                    <option>Besoins relatifs au logement</option>
-                    <option>Demande d'aide financière</option>
-                    <option>Loisirs</option>
-                    <option>Aide à domicile</option>
-                </optgroup>
-                <optgroup label="Développement durable">
-                    <option>Économie d'énergie</option>
-                </optgroup>
-                <optgroup label="Accompagnement aux démarches">
-                    <option>Documents administratifs</option>
-                    <option>Rédacion de courrier</option>
-                </optgroup>
-                <optgroup label="Culture">
-                    <option>Activité culturelle</option>
-                    <option>Entraide</option>
-                </optgroup>
-                <optgroup label="Emploi">
-                    <option>Recherche d'emploi</option>
-                    <option>Information sur les droits</option>
-                    <option>Insertion</option>
-                </optgroup>
-                <optgroup label="Santé">
-                    <option>Démarches</option>
-                    <option>Centres médicaux gratuits</option>
-                    <option>Addictions</option>
-                    <option>Enfance</option>
-                </optgroup>
-                <optgroup label="Handicap">
-                    <option>Association de soutien</option>
-                    <option>Travaux adoption</option>
-                </optgroup>
-                <optgroup label="Loisirs">
-                    <option>Vacances</option>
-                    <option>Centre aéré</option>
-                </optgroup>
-            </select></label>
-            <h5>Public accueilli</h5>
-            <label>Enfants :<input type="checkbox"></label>
-            <label>Parent seul :<input type="checkbox"></label>
-            Tranche d'âge : <select><option><</option><option>=</option><option>></option></select><input type="number">ans
-            <label>Sans-papiers ?<input type="checkbox"></label>
-            <h5>Services offerts</h5>
-            <label><input type="checkbox">Machine à laver</label>
-            <label><input type="checkbox">Douches</label>
-            <label><input type="checkbox">Toilettes</label>
-            <label><input type="checkbox">Imprimante</label>
-        </form>
+    <div id="enTeteNavigation">
+        <p>
+            <span>
+                <span id="raccourcisNavigation">
+                    <span id="navigationInformation">Information</span> -
+                    <span id="navigationPublic">Public</span> -
+                    <span id="navigationBesoin">Besoin</span> -
+                    <span id="navigationRecapitulatif">Récapitulatif</span>
+                </span>
+            <span id="raccourcisAction">
+                <span>Terminer</span>
+            </span>
+        </p>
     </div>
+</header>
 
+<div id="blocInformation" class="blocMasquable">
+    <div class="blocGauche">
+        <h2 id="titreInfoPartenaire">Informations</h2>
+        <label id="nomPartenaire"><b>Nom de l'association</b><br>
+            <input type="text">
+        </label><br>
+        <img id="baliseAdressePartenaire" src="svg/baliseRouge.svg" width="30px">
+        <label id="adressePartenaire"><b>Adresse</b><br>
+            <input type="text">
+        </label><br>
+        <img id="imageTelephonePartenaire" src="svg/telephoneNoir.svg" width="30px">
+        <label id="telephonePartenaire"><b>Téléphone</b><br>
+            <input type="text">
+        </label><br>
+        <img id="imageHorairePartenaire" src="svg/telephoneNoir.svg" width="30px">
+        <span id="horairesPartenaire"><b>Ouvertures - Horaires</b></span><br>
+        <label><span class="horaireQuotidien">lundi</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">mardi</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">mercredi</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">jeudi</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">vendredi</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">samedi</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">dimanche</span><input type="text"></label><br>
+    </div>
+    <div class="blocDroite">
+        <p><b>Fiche de liaison :</b></p>
+        <p><span class="boutonGauche" id="boutonAvecFiche" onclick="assombrir(this.id);eclaircir('boutonSansFiche');">Oui</span> <span class="boutonDroite" id="boutonSansFiche" onclick="assombrir(this.id);eclaircir('boutonAvecFiche');">Non</span></p>
+    </div>
+    <div class="blocBoutonSuivant">
+        <span onclick="masquerBlocs();afficherBloc('blocPublicPartenaire');" class="boutonSuivant">Suivant &#62;</span>
+    </div>
+</div>
+
+
+<div id="blocPublicPartenaire" class="blocMasquable">
+    <div class="blocGauche">
+        <p><b>Genre :</b></p>
+        <p><span class="boutonGauche" id="boutonFemme" onclick="assombrir(this.id);eclaircir('boutonHomme');">Mme</span> <span class="boutonDroite" id="boutonHomme" onclick="assombrir(this.id);eclaircir('boutonFemme');">M</span></p>
+        <p><b>Âge :</b></p>
+        <p><span id="textPartenaireAgeMin">Min :</span><span id="textPartenaireAgeMax">Max :</span></p>
+        <p><input type="number" min="0" max="100" class="boutonGauche" id="boutonAgeMinimum"><input type="number" class="boutonDroite" min="100" id="boutonAgeMaximum"></p>
+        <p><b>Emploi :</b></p>
+        <p><span class="boutonGauche" id="boutonAvecEmploi" onclick="assombrir(this.id);eclaircir('boutonSansEmploi');">Avec</span> <span class="boutonDroite" id="boutonSansEmploi" onclick="assombrir(this.id);eclaircir('boutonAvecEmploi');">Sans</span></p>
+        <p><b>Fiche de liaison :</b></p>
+        <p><span class="boutonGauche" id="boutonFicheObligatoire" onclick="assombrir(this.id);eclaircir('boutonFicheNonObligatoire');">Avec</span> <span class="boutonDroite" id="boutonFicheNonObligatoire" onclick="assombrir(this.id);eclaircir('boutonFicheObligatoire');">Sans</span></p>
+    </div>
+    <div class="blocDroite">
+        <p><b>Conjoint :</b></p>
+        <p><span class="boutonGauche" id="boutonAvecConjoint" onclick="assombrir(this.id);eclaircir('boutonSansConjoint');">Avec</span> <span class="boutonDroite" id="boutonSansConjoint" onclick="assombrir(this.id);eclaircir('boutonAvecConjoint');">Sans</span></p>
+        <p><b>Handicap :</b></p>
+        <p><span class="boutonGauche" id="boutonAvecHandicap" onclick="assombrir(this.id);eclaircir('boutonSansHandicap');">Avec</span> <span class="boutonDroite" id="boutonSansHandicap" onclick="assombrir(this.id);eclaircir('boutonAvecHandicap');">Sans</span></p>
+        <p><b>Papiers en règle :</b></p>
+        <p><span class="boutonGauche" id="boutonAvecPapiers" onclick="assombrir(this.id);eclaircir('boutonSansPapiers');">Avec</span> <span class="boutonDroite" id="boutonSansPapiers" onclick="assombrir(this.id);eclaircir('boutonAvecPapiers');">Sans</span></p>
+        <p><b>Papiers administratifs :</b></p>
+        <p><span class="boutonGauche" id="boutonAvecPapiersAdmin" onclick="assombrir(this.id);eclaircir('boutonSansPapiersAdmin');">Avec</span> <span class="boutonDroite" id="boutonSansPapiersAdmin" onclick="assombrir(this.id);eclaircir('boutonAvecPapiersAdmin');">Sans</span></p>
+    </div>
+    <div class="blocBoutonSuivant">
+        <span onclick="masquerBlocs();afficherBloc('blocBesoinVisiteurs');" class="boutonSuivant">Suivant &#62;</span>
+    </div>
+</div>
+
+<div id="blocBesoinVisiteurs" class="blocMasquable">
+    <h5 id="titreBesoins">Les besoins que j'offre</h5>
+    <div id="pictosBesoins">
+        <img src="svg/besoins/senior.svg" onclick="mettreAJourPrecisionsCriteres('senior');">
+        <img src="svg/besoins/petiteEnfance.svg" onclick="mettreAJourPrecisionsCriteres('petiteEnfance');">
+        <img src="svg/besoins/logement.svg" onclick="mettreAJourPrecisionsCriteres('logement');">
+        <img src="svg/besoins/devDurable.svg" onclick="mettreAJourPrecisionsCriteres('devDurable');">
+        <img src="svg/besoins/handicap.svg" onclick="mettreAJourPrecisionsCriteres('handicap');">
+        <img src="svg/besoins/parentalite.svg" onclick="mettreAJourPrecisionsCriteres('parentalite');">
+        <img src="svg/besoins/accesAuxDroits.svg" onclick="mettreAJourPrecisionsCriteres('accesAuxDroits');">
+        <img src="svg/besoins/sante.svg" onclick="mettreAJourPrecisionsCriteres('sante');">
+        <img src="svg/besoins/emploi.svg" onclick="mettreAJourPrecisionsCriteres('emploi');">
+        <img src="svg/besoins/culture.svg" onclick="mettreAJourPrecisionsCriteres('culture');">
+        <img src="svg/besoins/alimentaire.svg" onclick="mettreAJourPrecisionsCriteres('alimentaire');">
+        <img src="svg/besoins/precarite.svg" onclick="mettreAJourPrecisionsCriteres('precarite');">
+        <img src="svg/besoins/loisirs.svg" onclick="mettreAJourPrecisionsCriteres('loisirs');">
+    </div>
+    <div id="precisionBesoin">
+
+    </div>
+</div>
+
+<div id="blocRecapitulatif" class="blocMasquable">
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

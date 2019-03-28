@@ -13,7 +13,7 @@ if( isset( $_Se ) ) {
 echo '<!DOCTYPE html><html lang="fr">
     <head>
         <title>Page des associations</title>
-        
+
          <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -66,7 +66,7 @@ echo '<!DOCTYPE html><html lang="fr">
             src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin = "anonymous" >
-    </script >    
+    </script >
     </head>
     <body onload="afficherBloc(\'blocRecap\');">
         <div>
@@ -74,69 +74,69 @@ echo '<!DOCTYPE html><html lang="fr">
             <button onclick="effacerBlocsAsso();afficherBloc(\'blocEntraide\');">Entraide</button>
             <button onclick="effacerBlocsAsso();afficherBloc(\'blocContacts\');">Contacts Métropole</button>
         </div>
-        
+
         <div class="blocMasquable" id="blocRecap">
             <h1>Mon association</h1>
-            
+
             <form>
                 <label for="nomAsso">Nom de l\'association :<input type="text" id="nomAsso"></label>
                 <label for="adresseAsso">Adresse :<input type="text" id="adresseAsso"></label>
                 <label for="telAsso">Téléphone :<input type="text" id="telAsso"></label>
                 <label for="contactUrgenceAsso">Téléphone :<input type="text" id="contactUrgenceAsso"></label>
-                
-                <div>               
+
+                <div>
                 TODO : Insérer carte ici
                 </div>
                 <h3>Votre champ d\'action</h3>
-                
+
                 <select>
                     <option>Alimentaire</option>
                     <option>Logement</option>
                     <option>Autres</option>
                 </select>
-                
+
                 <h4>Public visé</h4>
                 <p><label><input type="checkbox">Adultes seuls</label></p>
                 <p><label><input type="checkbox">Famille</label></p>
                 <p><label><input type="checkbox">Enfants</label></p>
-                
+
                 <button>+ Ajouter un champ d\'action</button>
-                
+
                 <div><h4>Horaires de l\'association</h4><label for="horairesAsso"><textarea id="horairesAsso"></textarea></label></div>
-                
+
                 <div><h4>Présentation de l\'association</h4><label for="prezAsso"><textarea id="prezAsso"></textarea></label></div>
             </form>
         </div>
-        
+
         <div class="blocMasquable" id="blocEntraide">
             <div><button>Ajouter une demande</button></div>
-        
+
             <h1>Demandes d\'entraide</h1>
-            
+
             <div class="blocDemande">
             Besoin 3 chaises urgent<button>Répondre</button>
             </div>
-            
+
             <div class="blocDemande">
             Réparation dun ordinateur<button>Répondre</button>
             </div>
-            
+
             <div class="blocDemande">
             Cherche un local pour mercredi<button>Répondre</button>
             </div>
-            
+
             <div class="blocDemande">
             Quelqu\'un sait comment remplir le formulaire A38 ?<button>Répondre</button>
             </div>
-        
+
         </div>
-        
+
         <div class="blocMasquable" id="blocContacts">
             <h2>Vos contacts à la Métropole :</h2>
-            
+
             <button>Prendre un rendez-vous à la Métropole</button>
         </div>
-    
-    <script src="js/carto.js"></script>        
+
+    <script src="js/carto.js"></script>
     </body>
 </html>';
