@@ -121,6 +121,10 @@ header{
 .blocRecapResultat{
     clear: both;
 }
+.blocCarte{
+    width:300px;
+    height: 300px;
+}
 /**
     FOOTER
  */

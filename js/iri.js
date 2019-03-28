@@ -193,6 +193,7 @@ const icones = {
         'Aide à domicile',
     ],
 };
+var cartes = [];
 
 function chargerDonnees()
 {
@@ -429,20 +430,45 @@ function genererRecapitulatif()
 {
     const blocRecap = document.getElementById('blocRecapitulatif');
     blocRecap.innerHTML = '';
-    for( let association in associationsChoisies) {
+
+    for (let association in associationsChoisies) {
         // On créé les données pour chaque association qui a été sélectionnée.
         const assoCourante = getInformationsAssociation(associationsChoisies[association]);
         let codeAssoCourante = '';
         codeAssoCourante += '<div class="blocRecapResultat">';
-        codeAssoCourante += '<div class="blocInfoRecap blocGauche">toto';
+        codeAssoCourante += '<div class="blocRecapPicto"></div>';
+        codeAssoCourante += '<div class="blocInfoRecap blocGauche">';
+        codeAssoCourante += '<h3>' + assoCourante['nom'] + '</h3>';
+        codeAssoCourante += '<p>' + assoCourante['adresse'] + '</p>';
+        codeAssoCourante += '<p>' + assoCourante['telephone'] + '</p>';
+        codeAssoCourante += '<p>' + assoCourante['horaires'] + '</p>';
+        codeAssoCourante += '<p>' + assoCourante['services'] + '</p>';
+        codeAssoCourante += '<p>' + 'Fiche liaison obligatoire (l\'imprimer)' + '</p>';
+        codeAssoCourante += '<label>Notes </label><textarea placeholder="Écrivez ici des notes qui apparaîtront sur l\'impression."></textarea>';
         codeAssoCourante +='</div>';
-        codeAssoCourante += '<div class="blocInfoRecap blocDroite">titi';
+        codeAssoCourante += '<div class="blocInfoRecap blocGauche blocCarte" id="carteRecap' + assoCourante['id'] + '">';
         codeAssoCourante +='</div>';
         codeAssoCourante +='</div>';
         blocRecap.innerHTML+=codeAssoCourante;
+
+    }
+    for( let association in associationsChoisies) {
+        // On dessine la carte pour chaque association.
+        const assoCourante = getInformationsAssociation(associationsChoisies[association]);
+        cartes[association] = L.map('carteRecap' + assoCourante['id']);
+        creerCarte(cartes[association], assoCourante);
     }
 }
 
+function creerCarte(carte, association)
+{
+    const map = carte.setView([association['latitude'], association['longitude']], 17);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([association['latitude'], association['longitude']]).addTo(map)
+        .bindPopup('This is the Eiffel Tower<br> Easily customizable.');
+}
 
 
 
