@@ -8,14 +8,14 @@ header{
     float: left;
 }
 #logoBoussole{
-    height: 100px;
+    height: 50px;
 }
 
 #logoGrandLyon{
 }
 #logoMetropole{
     float: right;
-    height: 100px;
+    height: 50px;
 }
 
 #enTeteNavigation{
