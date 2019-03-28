@@ -127,6 +127,8 @@ const tableauAssos = [
 var assos = [];
 var besoinsSelectionnes = [];
 var associationsChoisies = [];
+var sousCategorieCourante = []; // fixme, astuce dégueu, à corriger si j'ai le tps.
+var sousCategoriesChoisies = []; // fixme idem
 const icones = {
     accesAuxDroits:'',
     alimentaire:'',
@@ -347,6 +349,7 @@ function genererGraphe()
         var clickedNodes = nodes.get(ids);
         if (clickedNodes[0]) {
             labelCourant = clickedNodes[0]['label'];
+            sousCategorieCourante = labelCourant;
             miseAJourResultats(labelCourant);
         }
     });
@@ -369,7 +372,6 @@ function miseAJourResultats(labelNoeud='')
 
 function afficherResultats(tableauResultats)
 {
-    //console.log(tableauResultats);
     let contenuResultats = '<div id="listeResultats">';
     let classe = 'gris';
     for( let resultat in tableauResultats) {
@@ -398,6 +400,7 @@ function selectionnerAssociation(idAssociation)
 {
     if(!associationsChoisies.includes(idAssociation)) {
         associationsChoisies.push(idAssociation); // ajout à la liste des assos choisies
+        sousCategoriesChoisies.push(sousCategorieCourante);
     }
     document.getElementById('resultatAsso' + idAssociation).style.backgroundColor = '#ffcad2'; // Chgt de couleur.
 }
@@ -436,17 +439,17 @@ function genererRecapitulatif()
         const assoCourante = getInformationsAssociation(associationsChoisies[association]);
         let codeAssoCourante = '';
         codeAssoCourante += '<div class="blocRecapResultat">';
-        codeAssoCourante += '<div class="blocRecapPicto"></div>';
+        codeAssoCourante += '<div class="blocRecapPicto blocGauche">' + getPicto(association) + '</div>';
         codeAssoCourante += '<div class="blocInfoRecap blocGauche">';
-        codeAssoCourante += '<h3>' + assoCourante['nom'] + '</h3>';
-        codeAssoCourante += '<p>' + assoCourante['adresse'] + '</p>';
-        codeAssoCourante += '<p>' + assoCourante['telephone'] + '</p>';
-        codeAssoCourante += '<p>' + assoCourante['horaires'] + '</p>';
-        codeAssoCourante += '<p>' + assoCourante['services'] + '</p>';
-        codeAssoCourante += '<p>' + 'Fiche liaison obligatoire (l\'imprimer)' + '</p>';
-        codeAssoCourante += '<label>Notes </label><textarea placeholder="Écrivez ici des notes qui apparaîtront sur l\'impression."></textarea>';
+        codeAssoCourante += '<h3 class="titreInfoRecap">' + assoCourante['nom'] + '</h3>';
+        codeAssoCourante += '<p><img src="svg/baliseRouge.svg" height="30px">' + assoCourante['adresse'] + '</p>';
+        codeAssoCourante += '<p><img src="svg/telephoneNoir.svg" height="30px">' + assoCourante['telephone'] + '</p>';
+        codeAssoCourante += '<p><b>Horaires :</b><br>' + assoCourante['horaires'].replace(/\n/g, "<br />") + '</p>';
+        codeAssoCourante += '<p><b>Services :</b><br>' + assoCourante['services'].replace(/\n/g, "<br />") + '</p>';
+        codeAssoCourante += '<p>' + '<b>Fiche liaison obligatoire</b> (<u>l\'imprimer</u>)' + '</p>';
+        codeAssoCourante += '<label>Notes :</label><br><textarea placeholder="Écrivez ici des notes qui apparaîtront sur l\'impression." class="encartNotes"></textarea>';
         codeAssoCourante +='</div>';
-        codeAssoCourante += '<div class="blocInfoRecap blocGauche blocCarte" id="carteRecap' + assoCourante['id'] + '">';
+        codeAssoCourante += '<div class="blocGauche blocCarte" id="carteRecap' + assoCourante['id'] + '">';
         codeAssoCourante +='</div>';
         codeAssoCourante +='</div>';
         blocRecap.innerHTML+=codeAssoCourante;
@@ -486,6 +489,16 @@ function getInformationsAssociation(idAsso)
     for(let asso in assos) {
         if(assos[asso]['id'] === idAsso) {
             return assos[asso];
+        }
+    }
+}
+
+function getPicto(compteur)
+{
+    const categorie = sousCategoriesChoisies[compteur];
+    for (let besoin in besoins) {
+        if(besoins[besoin].includes(categorie)) {
+            return '<img src="svg/besoins/' + besoin + 'Rouge.svg" width="35px" height="35px">' ;
         }
     }
 }

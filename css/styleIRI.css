@@ -115,14 +115,32 @@ header{
 }
 
 #blocRecapitulatif{
-    width:60%;
+    width:80%;
     margin: auto;
 }
 .blocRecapResultat{
     clear: both;
+    padding-top: 5%;
+}
+.blocRecapPicto{
+    width: 5%;
+}
+.blocInfoRecap{
+    width: 55%;
+    border-left: 3px solid #F32020;
+    padding-left: 5%;
+    padding-right: 20px;
+}
+.titreInfoRecap{
+    padding-left: 3%;
+    color: red;
+}
+.encartNotes{
+    width: 75%;
+    height: 5%;
 }
 .blocCarte{
-    width:300px;
+    width:40%;
     height: 300px;
 }
 /**
