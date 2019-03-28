@@ -373,19 +373,17 @@ function miseAJourResultats(labelNoeud='')
 function afficherResultats(tableauResultats)
 {
     let contenuResultats = '<div id="listeResultats">';
-    let classe = 'gris';
+    let couleur = 'gris';
     for( let resultat in tableauResultats) {
         let idAssoCourante = 'resultatAsso' + tableauResultats[resultat]['id'];
-        let texteSupplementaire = '<h6>Horaires :</h6>';
-        texteSupplementaire += '<p>' + tableauResultats[resultat]['horaires'] + '</p>';
-        let codeAsso = '<div class="blocResultat ' + classe + '" id="' + idAssoCourante + '">';
+        let codeAsso = '<div class="blocResultat ' + couleur + '" id="' + idAssoCourante + '">';
         codeAsso += '<h6 class="titreAsso">' + tableauResultats[resultat]['nom'] + '<img onclick="selectionnerAssociation(' + tableauResultats[resultat]['id'] + ');" alt="Ajouter association" title="Ajouter association" src="svg/plus.svg" class="blocDroite boutonPlus" /></h6>';
         codeAsso += '<p class="adresseAsso"><img class="baliseResultat" src="svg/baliseRouge.svg">' + tableauResultats[resultat]['adresse'] + '</p>';
         codeAsso += '<p><img src="svg/telephoneNoir.svg" class="imageTelephone">' + tableauResultats[resultat]['telephone'] + '</p>';
         codeAsso += '<p class="souligne">...</p>';
         codeAsso += '</div>';
         contenuResultats += codeAsso;
-        (classe==='gris') ? classe='blanc' : classe='gris';
+        (couleur==='gris') ? couleur='blanc' : couleur='gris';
     }
     contenuResultats += '</div>';
     document.getElementById('blocListeResultats').innerHTML = contenuResultats;
@@ -402,7 +400,17 @@ function selectionnerAssociation(idAssociation)
         associationsChoisies.push(idAssociation); // ajout à la liste des assos choisies
         sousCategoriesChoisies.push(sousCategorieCourante);
     }
-    document.getElementById('resultatAsso' + idAssociation).style.backgroundColor = '#ffcad2'; // Chgt de couleur.
+    document.getElementById('resultatAsso' + idAssociation).classList.remove('gris');
+    document.getElementById('resultatAsso' + idAssociation).classList.remove('blanc');
+    document.getElementById('resultatAsso' + idAssociation).classList.add("selection"); // Chgt de couleur.
+}
+
+function decolorerAssociations()
+{
+    const resultats = document.getElementsByClassName('blocResultat');
+    for(let blocResultat in resultats) {
+        //resultats[blocResultat].classList.remove('selection');
+    }
 }
 
 function agrandirResultatCourant(idBlocResultat, donneesResultat) {

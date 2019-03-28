@@ -53,7 +53,7 @@
                         <span id="navigationRecapitulatif" onclick="masquerBlocs();afficherBloc('blocRecapitulatif');mettreAJourNavigation('navigationRecapitulatif');">Récapitulatif</span>
                     </span>
                     <span id="raccourcisAction">
-                        <span id="boutonNouveauParcours" onclick="masquerBlocs();afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');assos=[];besoinsSelectionnes = [];associationsChoisies=[];">Nouveau parcours
+                        <span id="boutonNouveauParcours" onclick="masquerBlocs();afficherBloc('blocProfilVisiteur');mettreAJourNavigation('navigationProfil');besoinsSelectionnes = [];associationsChoisies=[];sousCategorieCourante='';sousCategoriesChoisies=[];cartes=[];document.getElementById('blocRecapitulatif').innerHTML='';document.getElementById('precisionBesoin').innerHTML='';document.getElementById('blocDessinResultats').innerHTML='';document.getElementById('blocListeResultats').innerHTML='';decolorerAssociations();">Nouveau parcours
                             <img id="imageNouveauParcours" alt="Nouveau parcours" title="Nouveau parcours" src="svg/nouveauParcours.svg">
                         </span>
 

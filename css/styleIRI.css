@@ -161,3 +161,6 @@ header{
 .souligne{
     text-decoration: underline;
 }
+.selection{
+    background-color: #ffcad2;
+}
