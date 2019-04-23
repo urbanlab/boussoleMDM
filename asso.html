@@ -34,7 +34,7 @@
 
     <script src="js/iri.js"></script>
 </head>
-<body onload="afficherBloc('blocInformation');mettreAJourNavigation('navigationInformation');">
+<body onload="afficherBloc('blocInformation');/*mettreAJourNavigation('navigationInformation');*/">
 <header>
     <div id="enTeteLogos">
         <div id="logoProjet">
@@ -54,7 +54,7 @@
                     <span id="navigationRecapitulatif">Récapitulatif</span>
                 </span>
             <span id="raccourcisAction">
-                <span>Terminer</span>
+                <span onclick="alert('Merci. Données mises à jour.')">Terminer</span>
             </span>
         </p>
     </div>
@@ -64,25 +64,25 @@
     <div class="blocGauche">
         <h2 id="titreInfoPartenaire">Informations</h2>
         <label id="nomPartenaire"><b>Nom de l'association</b><br>
-            <input type="text">
+            <input type="text" id="inputNomAsso">
         </label><br>
         <img id="baliseAdressePartenaire" src="svg/baliseRouge.svg" width="30px">
         <label id="adressePartenaire"><b>Adresse</b><br>
-            <input type="text">
+            <input type="text" id="inputAdresseAsso">
         </label><br>
         <img id="imageTelephonePartenaire" src="svg/telephoneNoir.svg" width="30px">
         <label id="telephonePartenaire"><b>Téléphone</b><br>
-            <input type="text">
+            <input type="text" id="inputTelAsso">
         </label><br>
         <img id="imageHorairePartenaire" src="svg/telephoneNoir.svg" width="30px">
         <span id="horairesPartenaire"><b>Ouvertures - Horaires</b></span><br>
-        <label><span class="horaireQuotidien">lundi</span><input type="text"></label><br>
-        <label><span class="horaireQuotidien">mardi</span><input type="text"></label><br>
-        <label><span class="horaireQuotidien">mercredi</span><input type="text"></label><br>
-        <label><span class="horaireQuotidien">jeudi</span><input type="text"></label><br>
-        <label><span class="horaireQuotidien">vendredi</span><input type="text"></label><br>
-        <label><span class="horaireQuotidien">samedi</span><input type="text"></label><br>
-        <label><span class="horaireQuotidien">dimanche</span><input type="text"></label><br>
+        <label><span class="horaireQuotidien">lundi</span><input type="text" id="inputHoraireLundi"></label><br>
+        <label><span class="horaireQuotidien">mardi</span><input type="text" id="inputHoraireMardi"></label><br>
+        <label><span class="horaireQuotidien">mercredi</span><input type="text" id="inputHoraireMercredi"></label><br>
+        <label><span class="horaireQuotidien">jeudi</span><input type="text" id="inputHoraireJeudi"></label><br>
+        <label><span class="horaireQuotidien">vendredi</span><input type="text" id="inputHoraireVendredi"></label><br>
+        <label><span class="horaireQuotidien">samedi</span><input type="text" id="inputHoraireSamedi"></label><br>
+        <label><span class="horaireQuotidien">dimanche</span><input type="text" id="inputHoraireDimanche"></label><br>
     </div>
     <div class="blocDroite">
         <p><b>Fiche de liaison :</b></p>
@@ -155,7 +155,7 @@
             <span onclick="masquerBlocs();afficherBloc('blocPublicPartenaire');" class="boutonSuivant">&#60; Précédent</span>
         </div>
         <div class="blocBoutonSuivant">
-            <span onclick="masquerBlocs();afficherBloc('blocRecapitulatif');" class="boutonSuivant">Suivant &#62;</span>
+            <span onclick="masquerBlocs();afficherBloc('blocRecapitulatif');remplirRecapitulatif();" class="boutonSuivant">Suivant &#62;</span>
         </div>
     </div>
 </div>
@@ -168,7 +168,6 @@
     <p id="recapTelephoneAsso"></p>
     <p><b>Horaires :</b></p>
     <p id="recapHorairesVisiteurs"></p>
-    <p><b>Services :</b></p>
 
     <p>Notes :</p>
     <textarea></textarea>

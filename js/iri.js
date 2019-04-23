@@ -300,6 +300,15 @@ function getIdCategorie(labelCategorie, tableauNoeuds) {
     }
 }
 
+function remplirRecapitulatif()
+{
+    document.getElementById('recapNomAsso').innerText = document.getElementById('inputNomAsso').value;
+    document.getElementById('recapAdresseAsso').innerText = document.getElementById('inputAdresseAsso').value;
+    document.getElementById('recapTelephoneAsso').innerText = document.getElementById('inputTelAsso').value;
+    document.getElementById('recapHorairesVisiteurs').innerHTML = '<p>Lundi :' + document.getElementById('inputHoraireLundi').value + '<br>' + 'Mardi :' + document.getElementById('inputHoraireMardi').value + '<br>' + 'Mercredi :' + document.getElementById('inputHoraireMercredi').value + '<br>' + 'Jeudi :' + document.getElementById('inputHoraireJeudi').value + '<br>' + 'Vendredi :' + document.getElementById('inputHoraireVendredi').value + '<br>' + 'Samedi :' + document.getElementById('inputHoraireSamedi').value + '<br>' + 'Dimanche :' + document.getElementById('inputHoraireDimanche').value + '<br></p>'
+
+}
+
 function genererGraphe()
 {
     noeuds = [
@@ -505,6 +514,13 @@ function genererRecapitulatif()
         cartes[association] = L.map('carteRecap' + assoCourante['id']);
         creerCarte(cartes[association], assoCourante);
     }
+}
+
+function imprimerRecap()
+{
+    var doc = new jsPDF();
+    doc.text = document.getElementById('blocRecapitulatif').innerHTML;
+    doc.save();
 }
 
 function creerCarte(carte, association)
