@@ -38,7 +38,9 @@
 <header>
     <div id="enTeteLogos">
         <div id="logoProjet">
-            <img id="logoBoussole" alt="Logo Boussole" title="Logo Boussole" src="img/logoBoussole.svg">
+            <a href="asso.html">
+                <img id="logoBoussole" alt="Logo Boussole" title="Logo Boussole" src="img/logoBoussole.svg">
+            </a>
         </div>
         <div id="logoPorteurs">
             <img id="logoMetropole" src="img/Logo_Grand_Lyon.svg" title="Logo Grand Lyon" alt="Logo Grand Lyon">
@@ -48,10 +50,10 @@
         <p>
             <span>
                 <span id="raccourcisNavigation">
-                    <span id="navigationInformation">Information</span> -
-                    <span id="navigationPublic">Public</span> -
-                    <span id="navigationBesoin">Besoin</span> -
-                    <span id="navigationRecapitulatif">Récapitulatif</span>
+                    <span class="pointeur" id="navigationInformation" onclick="masquerBlocs();afficherBloc('blocInformation');">Information</span> -
+                    <span class="pointeur" id="navigationPublic" onclick="masquerBlocs();afficherBloc('blocPublicPartenaire');">Public</span> -
+                    <span class="pointeur" id="navigationBesoin" onclick="masquerBlocs();afficherBloc('blocBesoinVisiteurs');">Besoin</span> -
+                    <span class="pointeur" id="navigationRecapitulatif" onclick="masquerBlocs();afficherBloc('blocRecapitulatif');">Récapitulatif</span>
                 </span>
             <span id="raccourcisAction">
                 <span onclick="alert('Merci. Données mises à jour.')">Terminer</span>
@@ -133,19 +135,19 @@
 <div id="blocBesoinVisiteurs" class="blocMasquable">
     <h5 id="titreBesoins">Les besoins que j'offre</h5>
     <div id="pictosBesoins">
-        <img src="svg/besoins/senior.svg" onclick="mettreAJourPrecisionsCriteres('senior');">
-        <img src="svg/besoins/petiteEnfance.svg" onclick="mettreAJourPrecisionsCriteres('petiteEnfance');">
-        <img src="svg/besoins/logement.svg" onclick="mettreAJourPrecisionsCriteres('logement');">
-        <img src="svg/besoins/devDurable.svg" onclick="mettreAJourPrecisionsCriteres('devDurable');">
-        <img src="svg/besoins/handicap.svg" onclick="mettreAJourPrecisionsCriteres('handicap');">
-        <img src="svg/besoins/parentalite.svg" onclick="mettreAJourPrecisionsCriteres('parentalite');">
-        <img src="svg/besoins/accesAuxDroits.svg" onclick="mettreAJourPrecisionsCriteres('accesAuxDroits');">
-        <img src="svg/besoins/sante.svg" onclick="mettreAJourPrecisionsCriteres('sante');">
-        <img src="svg/besoins/emploi.svg" onclick="mettreAJourPrecisionsCriteres('emploi');">
-        <img src="svg/besoins/culture.svg" onclick="mettreAJourPrecisionsCriteres('culture');">
-        <img src="svg/besoins/alimentaire.svg" onclick="mettreAJourPrecisionsCriteres('alimentaire');">
-        <img src="svg/besoins/precarite.svg" onclick="mettreAJourPrecisionsCriteres('precarite');">
-        <img src="svg/besoins/loisirs.svg" onclick="mettreAJourPrecisionsCriteres('loisirs');">
+        <img class="picto" src="svg/besoins/senior.svg" onclick="mettreAJourPrecisionsCriteres('senior');">
+        <img class="picto" src="svg/besoins/petiteEnfance.svg" onclick="mettreAJourPrecisionsCriteres('petiteEnfance');">
+        <img class="picto" src="svg/besoins/logement.svg" onclick="mettreAJourPrecisionsCriteres('logement');">
+        <img class="picto" src="svg/besoins/devDurable.svg" onclick="mettreAJourPrecisionsCriteres('devDurable');">
+        <img class="picto" src="svg/besoins/handicap.svg" onclick="mettreAJourPrecisionsCriteres('handicap');">
+        <img class="picto" src="svg/besoins/parentalite.svg" onclick="mettreAJourPrecisionsCriteres('parentalite');">
+        <img class="picto" src="svg/besoins/accesAuxDroits.svg" onclick="mettreAJourPrecisionsCriteres('accesAuxDroits');">
+        <img class="picto" src="svg/besoins/sante.svg" onclick="mettreAJourPrecisionsCriteres('sante');">
+        <img class="picto" src="svg/besoins/emploi.svg" onclick="mettreAJourPrecisionsCriteres('emploi');">
+        <img class="picto" src="svg/besoins/culture.svg" onclick="mettreAJourPrecisionsCriteres('culture');">
+        <img class="picto" src="svg/besoins/alimentaire.svg" onclick="mettreAJourPrecisionsCriteres('alimentaire');">
+        <img class="picto" src="svg/besoins/precarite.svg" onclick="mettreAJourPrecisionsCriteres('precarite');">
+        <img class="picto" src="svg/besoins/loisirs.svg" onclick="mettreAJourPrecisionsCriteres('loisirs');">
     </div>
     <div id="precisionBesoin">
 

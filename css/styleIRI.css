@@ -50,6 +50,7 @@ header{
 }
 .blocDroite{
     float: right;
+    cursor: pointer;
 }
 #blocProfilVisiteur{
     width: 60%;
@@ -63,11 +64,13 @@ header{
     background-color: lightgray;
     border-radius: 15px 0 0 15px;
     padding: 5px;
+    cursor: pointer;
 }
 .boutonDroite{
     background-color: lightgray;
     border-radius: 0 15px 15px 0;
     padding: 5px;
+    cursor: pointer;
 }
 
 .blocBoutons{
@@ -76,9 +79,11 @@ header{
 }
 .blocBoutonSuivant{
     float: right;
+    cursor: pointer;
 }
 .blocBoutonPrecedent{
     float: left;
+    cursor: pointer;
 }
 
 #blocBesoinVisiteur{
@@ -109,6 +114,7 @@ header{
 .boutonPlus{
     width: 15px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .adresseAsso{
 }
@@ -170,6 +176,12 @@ header{
 .selection{
     background-color: #ffcad2;
 }
+.pointeur {
+    cursor: pointer;
+}
+.picto {
+    cursor: pointer;
+}
 
 
 /**
@@ -213,6 +225,7 @@ header{
     font-weight: bold;
     padding-top: 50px;
     padding-bottom: 50px;
+    cursor: pointer;
 }
 
 #blocPublicPartenaire{
